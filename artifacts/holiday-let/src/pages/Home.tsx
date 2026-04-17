@@ -47,12 +47,7 @@ export default function Home() {
           >
             A curated collection of premium holiday homes on the North Yorkshire coast. Clifftops, harbours, and wide open skies.
           </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               className="rounded-full text-base px-8 h-14 font-semibold shadow-lg cursor-pointer transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#ffffff', color: '#3C577A' }}
@@ -69,7 +64,7 @@ export default function Home() {
             >
               Book Now
             </button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
