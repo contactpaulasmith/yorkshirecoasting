@@ -49,9 +49,7 @@ export default function Footer() {
               <li>contactus@yorkshirecoasting.co.uk</li>
               <li>+44 (0) 7715 417 923</li>
               <li className="pt-2">
-                YorkshireCoasting<br/>
-                Mark &amp; Paula Smith (Owners)<br/>
-                Scarborough
+                Mark &amp; Paula Smith (Owners)
               </li>
             </ul>
           </div>
