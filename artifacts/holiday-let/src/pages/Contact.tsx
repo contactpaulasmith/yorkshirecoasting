@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Instagram, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -87,22 +87,32 @@ export default function Contact() {
                     <a href="tel:+447715417923" className="text-muted-foreground hover:text-primary transition-colors">
                       +44 (0) 7715 417 923
                     </a>
-                    <p className="text-sm text-muted-foreground/70 mt-1">Mon-Fri, 9am - 5pm</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-full mr-4 text-primary">
-                    <MapPin size={20} />
+                    <Instagram size={20} />
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Office</h3>
-                    <p className="text-muted-foreground">
-                      YorkshireCoasting Ltd<br/>
-                      14 Harbour Road<br/>
-                      Scarborough, North Yorkshire<br/>
-                      YO11 1XX
-                    </p>
+                    <h3 className="font-medium mb-1">Instagram</h3>
+                    <a href="https://www.instagram.com/scarboroughholidays/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      @scarboroughholidays
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-primary/10 p-3 rounded-full mr-4 text-primary">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-1">TikTok</h3>
+                    <a href="https://www.tiktok.com/@scarboroughholidays" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      @scarboroughholidays
+                    </a>
                   </div>
                 </div>
               </div>
