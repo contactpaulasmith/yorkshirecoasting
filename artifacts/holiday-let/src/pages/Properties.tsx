@@ -32,7 +32,7 @@ export default function Properties() {
             transition={{ delay: 0.2 }}
             className="text-lg text-primary-foreground/75 max-w-2xl mx-auto"
           >
-            Discover our premium coastal properties on the North Yorkshire coast, Scarborough, ready to welcome you.
+            Discover our premium coastal properties on the North Yorkshire coast, ready to welcome you.
           </motion.p>
         </div>
       </div>
