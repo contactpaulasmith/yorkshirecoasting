@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h2 className="font-serif text-2xl font-semibold text-primary mb-4">YorkshireCoasting.co.uk</h2>
             <p className="text-muted-foreground text-sm max-w-sm mb-6 leading-relaxed">
-              A curated collection of premium coastal holiday lets on the North Yorkshire coast. Discover your home away from home, where every detail is considered for an unhurried, welcoming stay.
+              A collection of coastal holiday lets on the North Yorkshire coast. Discover your home away from home, where every detail is considered for a relaxed, welcoming stay.
             </p>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/scarboroughholidays/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
