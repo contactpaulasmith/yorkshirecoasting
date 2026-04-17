@@ -20,7 +20,7 @@ export default function AdminThingsToDo() {
   const [isOpen, setIsOpen] = useState(false);
 
   const [formData, setFormData] = useState<Partial<ThingToDo>>({
-    title: "", category: "Food & Drink", location: "", description: "", link: "", propertyIds: []
+    title: "", category: "Food & Drink", location: "", description: "", image: "", link: "", propertyIds: []
   });
 
   const handleEdit = (t: ThingToDo) => {
@@ -33,7 +33,7 @@ export default function AdminThingsToDo() {
     setEditingThing(null);
     setFormData({
       id: "t" + Date.now(),
-      title: "", category: "Food & Drink", location: "", description: "", link: "", propertyIds: []
+      title: "", category: "Food & Drink", location: "", description: "", image: "", link: "", propertyIds: []
     });
     setIsOpen(true);
   };
@@ -102,6 +102,14 @@ export default function AdminThingsToDo() {
               <div className="space-y-2">
                 <Label>Description</Label>
                 <Textarea required rows={3} value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
+              </div>
+
+              <div className="space-y-2">
+                <Label>Photo URL</Label>
+                <Input value={formData.image} onChange={e => setFormData({...formData, image: e.target.value})} placeholder="https://images.unsplash.com/..." data-testid="input-thing-image" />
+                {formData.image && (
+                  <img src={formData.image} alt="" className="h-24 w-full object-cover rounded-md mt-1" />
+                )}
               </div>
 
               <div className="space-y-2">

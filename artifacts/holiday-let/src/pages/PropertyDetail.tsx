@@ -86,20 +86,32 @@ export default function PropertyDetail() {
 
       {/* Image Gallery */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[50vh] min-h-[400px] max-h-[600px] rounded-2xl overflow-hidden"
         >
-          <div className="md:col-span-2 md:row-span-2">
-            <img src={property.images[0]} alt={`${property.name} main`} className="w-full h-full object-cover" />
-          </div>
-          {property.images.slice(1, 5).map((img, idx) => (
-            <div key={idx} className="hidden md:block">
-              <img src={img} alt={`${property.name} detail ${idx + 1}`} className="w-full h-full object-cover" />
+          {/* Hero grid: first image large, next 4 in grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[50vh] min-h-[400px] max-h-[600px] rounded-2xl overflow-hidden mb-4">
+            <div className="md:col-span-2 md:row-span-2">
+              <img src={property.images[0]} alt={`${property.name} main`} className="w-full h-full object-cover" />
             </div>
-          ))}
+            {property.images.slice(1, 5).map((img, idx) => (
+              <div key={idx} className="hidden md:block">
+                <img src={img} alt={`${property.name} photo ${idx + 2}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Additional images (6–10) in a scrollable row */}
+          {property.images.length > 5 && (
+            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin">
+              {property.images.slice(5).map((img, idx) => (
+                <div key={idx} className="shrink-0 w-48 h-32 rounded-xl overflow-hidden">
+                  <img src={img} alt={`${property.name} photo ${idx + 6}`} className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          )}
         </motion.div>
       </div>
 
@@ -161,19 +173,26 @@ export default function PropertyDetail() {
                       {propertyThingsToDo
                         .filter(t => cat === "All" || t.category === cat)
                         .map(thing => (
-                        <Card key={thing.id} className="border-border/50 shadow-sm">
-                          <CardContent className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div>
-                              <div className="flex items-center gap-2 mb-1">
-                                <h3 className="font-medium text-foreground">{thing.title}</h3>
-                                <Badge variant="secondary" className="text-[10px] uppercase tracking-wider">{thing.category}</Badge>
+                        <Card key={thing.id} className="border-border/50 shadow-sm overflow-hidden">
+                          <CardContent className="p-0 flex flex-col sm:flex-row sm:items-stretch gap-0">
+                            {thing.image && (
+                              <div className="sm:w-32 sm:shrink-0 h-32 sm:h-auto">
+                                <img src={thing.image} alt={thing.title} className="w-full h-full object-cover" />
                               </div>
-                              <p className="text-sm text-muted-foreground mb-1">{thing.description}</p>
-                              <p className="text-xs text-muted-foreground/70"><MapPin size={12} className="inline mr-1"/>{thing.location}</p>
+                            )}
+                            <div className="flex-1 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                              <div>
+                                <div className="flex items-center gap-2 mb-1">
+                                  <h3 className="font-medium text-foreground">{thing.title}</h3>
+                                  <Badge variant="secondary" className="text-[10px] uppercase tracking-wider">{thing.category}</Badge>
+                                </div>
+                                <p className="text-sm text-muted-foreground mb-1">{thing.description}</p>
+                                <p className="text-xs text-muted-foreground/70"><MapPin size={12} className="inline mr-1"/>{thing.location}</p>
+                              </div>
+                              <Button variant="outline" size="sm" className="shrink-0" onClick={() => window.open(thing.link, "_blank")}>
+                                Visit Website
+                              </Button>
                             </div>
-                            <Button variant="outline" size="sm" className="shrink-0" onClick={() => window.open(thing.link, "_blank")}>
-                              Visit Website
-                            </Button>
                           </CardContent>
                         </Card>
                       ))}

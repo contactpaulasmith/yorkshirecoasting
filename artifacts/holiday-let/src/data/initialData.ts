@@ -20,6 +20,7 @@ export interface ThingToDo {
   category: "Food & Drink" | "Beaches" | "Attractions" | "Shopping";
   location: string;
   description: string;
+  image: string;
   link: string;
   propertyIds: string[]; // which properties this applies to (or all)
 }
@@ -124,15 +125,15 @@ export const initialProperties: Property[] = [
 ];
 
 export const initialThingsToDo: ThingToDo[] = [
-  { id: "t1", title: "Rick Stein's Seafood Restaurant", category: "Food & Drink", location: "Padstow", description: "The legendary seafood restaurant that put North Cornwall on the culinary map. Book ahead.", link: "https://rickstein.com", propertyIds: ["p2"] },
-  { id: "t2", title: "Polzeath Beach", category: "Beaches", location: "Polzeath", description: "One of Cornwall's premier surf beaches, with a long sandy stretch perfect for swimming, surfing, and sunsets.", link: "https://www.visitcornwall.com", propertyIds: ["p3"] },
-  { id: "t3", title: "Tate St Ives", category: "Attractions", location: "St Ives", description: "World-class contemporary art in a stunning cliffside building overlooking Porthmeor Beach.", link: "https://www.tate.org.uk/visit/tate-st-ives", propertyIds: ["p1"] },
-  { id: "t4", title: "The Hidden Hut", category: "Food & Drink", location: "Portscatho", description: "A famous cliff-top beach café serving incredible seasonal feasts. Book online for the feast nights.", link: "https://www.thehiddenhut.co.uk", propertyIds: [] },
-  { id: "t5", title: "Eden Project", category: "Attractions", location: "St Austell", description: "The world-famous biomes in a former quarry — a day trip that never disappoints.", link: "https://www.edenproject.com", propertyIds: [] },
-  { id: "t6", title: "Hayle Towans Beach", category: "Beaches", location: "Hayle", description: "Three miles of golden sand dunes and surf. Perfect for families.", link: "https://www.visitcornwall.com", propertyIds: ["p1"] },
-  { id: "t7", title: "Padstow Harbour Market", category: "Shopping", location: "Padstow", description: "Browse local artisan produce, fresh fish, crafts and gifts every weekend morning.", link: "https://www.padstow-tc.gov.uk", propertyIds: ["p2"] },
-  { id: "t8", title: "Land's End", category: "Attractions", location: "Land's End", description: "The dramatic westernmost tip of mainland Britain. Stunning cliff walks and sea views.", link: "https://www.landsend-landmark.co.uk", propertyIds: [] },
-  { id: "t9", title: "The Mariners", category: "Food & Drink", location: "Rock", description: "A Rick Stein pub with fantastic local ales and the best Cornish crab sandwiches.", link: "https://rickstein.com", propertyIds: ["p2", "p3"] }
+  { id: "t1", title: "Rick Stein's Seafood Restaurant", category: "Food & Drink", location: "Padstow", description: "The legendary seafood restaurant that put North Cornwall on the culinary map. Book ahead.", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80", link: "https://rickstein.com", propertyIds: ["p2"] },
+  { id: "t2", title: "Polzeath Beach", category: "Beaches", location: "Polzeath", description: "One of Cornwall's premier surf beaches, with a long sandy stretch perfect for swimming, surfing, and sunsets.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80", link: "https://www.visitcornwall.com", propertyIds: ["p3"] },
+  { id: "t3", title: "Tate St Ives", category: "Attractions", location: "St Ives", description: "World-class contemporary art in a stunning cliffside building overlooking Porthmeor Beach.", image: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=600&q=80", link: "https://www.tate.org.uk/visit/tate-st-ives", propertyIds: ["p1"] },
+  { id: "t4", title: "The Hidden Hut", category: "Food & Drink", location: "Portscatho", description: "A famous cliff-top beach café serving incredible seasonal feasts. Book online for the feast nights.", image: "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80", link: "https://www.thehiddenhut.co.uk", propertyIds: [] },
+  { id: "t5", title: "Eden Project", category: "Attractions", location: "St Austell", description: "The world-famous biomes in a former quarry — a day trip that never disappoints.", image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80", link: "https://www.edenproject.com", propertyIds: [] },
+  { id: "t6", title: "Hayle Towans Beach", category: "Beaches", location: "Hayle", description: "Three miles of golden sand dunes and surf. Perfect for families.", image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80", link: "https://www.visitcornwall.com", propertyIds: ["p1"] },
+  { id: "t7", title: "Padstow Harbour Market", category: "Shopping", location: "Padstow", description: "Browse local artisan produce, fresh fish, crafts and gifts every weekend morning.", image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80", link: "https://www.padstow-tc.gov.uk", propertyIds: ["p2"] },
+  { id: "t8", title: "Land's End", category: "Attractions", location: "Land's End", description: "The dramatic westernmost tip of mainland Britain. Stunning cliff walks and sea views.", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80", link: "https://www.landsend-landmark.co.uk", propertyIds: [] },
+  { id: "t9", title: "The Mariners", category: "Food & Drink", location: "Rock", description: "A Rick Stein pub with fantastic local ales and the best Cornish crab sandwiches.", image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600&q=80", link: "https://rickstein.com", propertyIds: ["p2", "p3"] }
 ];
 
 export const initialReviews: Review[] = [

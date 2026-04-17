@@ -61,6 +61,15 @@ export default function Home() {
             >
               View Our Properties
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full text-base px-8 h-14 bg-white/10 border-white text-white hover:bg-white hover:text-foreground backdrop-blur-sm"
+              onClick={() => setLocation("/contact")}
+              data-testid="button-book-now"
+            >
+              Book Now
+            </Button>
           </motion.div>
         </div>
       </section>
