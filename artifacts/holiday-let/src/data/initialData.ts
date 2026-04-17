@@ -57,6 +57,7 @@ export const initialProperties: Property[] = [
     ],
     images: [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/34d4a8b8-01f3-46e3-ad87-f64d08762106.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/caf9b32a-b845-4754-8254-08c5b7d0ca09.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/338897cd-e916-465a-af0d-a5ab337b675e.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/75e00a1c-c3d0-407d-8d90-9809e3e55e41.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/ad753ebb-ea55-462a-9191-c078fa87e326.jpeg?im_w=1440",
@@ -64,8 +65,7 @@ export const initialProperties: Property[] = [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/54d34ca2-5335-4e8a-a046-a67129e62fd4.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/5f6e9670-6002-4664-a585-65a325f12c5a.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/2de2e7c7-948a-4560-bc0a-dec9216a2713.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/1d7a3567-ed99-470f-9d82-71ddb9518b86.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/133f1018-557f-4290-a881-02ec8c4171cb.jpeg?im_w=1440"
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/1d7a3567-ed99-470f-9d82-71ddb9518b86.jpeg?im_w=1440"
     ]
   },
   {
