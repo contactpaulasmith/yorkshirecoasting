@@ -75,9 +75,18 @@ export default function Properties() {
                         <div className="flex items-center" title="Bedrooms"><Bed size={16} className="mr-1.5 opacity-70"/> {property.bedrooms}</div>
                         <div className="flex items-center" title="Bathrooms"><Bath size={16} className="mr-1.5 opacity-70"/> {property.bathrooms}</div>
                       </div>
-                      <Button variant="ghost" size="sm" className="rounded-full text-primary hover:text-primary hover:bg-primary/5">
-                        View Details
-                      </Button>
+                      <div className="flex items-center gap-2">
+                        <Button variant="ghost" size="sm" className="rounded-full text-primary hover:text-primary hover:bg-primary/5">
+                          View Details
+                        </Button>
+                        <Button
+                          size="sm"
+                          className="rounded-full"
+                          onClick={(e) => { e.stopPropagation(); window.open(property.airbnbLink, '_blank', 'noopener,noreferrer'); }}
+                        >
+                          Book Now
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
