@@ -47,7 +47,7 @@ export default function Footer() {
             <h3 className="font-medium text-sm tracking-wider uppercase mb-4 text-foreground">Contact</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>hello@yorkshirecoasting.co.uk</li>
-              <li>+44 (0) 1723 800 000</li>
+              <li>+44 (0) 7715 417 923</li>
               <li className="pt-2">
                 YorkshireCoasting Ltd<br/>
                 14 Harbour Road<br/>

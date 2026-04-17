@@ -84,8 +84,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Phone</h3>
-                    <a href="tel:+441723800000" className="text-muted-foreground hover:text-primary transition-colors">
-                      +44 (0) 1723 800 000
+                    <a href="tel:+447715417923" className="text-muted-foreground hover:text-primary transition-colors">
+                      +44 (0) 7715 417 923
                     </a>
                     <p className="text-sm text-muted-foreground/70 mt-1">Mon-Fri, 9am - 5pm</p>
                   </div>
