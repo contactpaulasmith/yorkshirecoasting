@@ -7,44 +7,58 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
-import { Mail, Phone, Instagram, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Instagram, CheckCircle2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const CONTACT_EMAIL = "contactus@yorkshirecoasting.co.uk";
+const FORMSPREE_URL = import.meta.env.VITE_FORMSPREE_URL as string | undefined;
 
 export default function Contact() {
   const { properties } = useAppContext();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [property, setProperty] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!FORMSPREE_URL) {
+      toast({ title: "Configuration error", description: "Form endpoint not set up yet.", variant: "destructive" });
+      return;
+    }
 
     const propertyLabel = property === "general" || !property
       ? "General Enquiry"
       : properties.find(p => p.id === property)?.name ?? property;
 
-    const subject = encodeURIComponent(`YorkshireCoasting Enquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\n` +
-      `Email: ${email}\n` +
-      `Phone: ${phone || "Not provided"}\n` +
-      `Property: ${propertyLabel}\n\n` +
-      `Message:\n${message}`
-    );
+    setIsLoading(true);
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: phone || "Not provided",
+          property: propertyLabel,
+          message,
+          _subject: `YorkshireCoasting Enquiry from ${name}`,
+        }),
+      });
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      if (!res.ok) throw new Error("Submission failed");
 
-    setIsSubmitted(true);
-    toast({
-      title: "Opening your email app…",
-      description: `Your enquiry will be sent to ${CONTACT_EMAIL}.`,
-    });
+      setIsSubmitted(true);
+      toast({ title: "Message sent!", description: "We'll get back to you as soon as possible." });
+    } catch {
+      toast({ title: "Something went wrong", description: "Please try again or email us directly.", variant: "destructive" });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -207,8 +221,8 @@ export default function Contact() {
                     </div>
                   </div>
                   
-                  <Button type="submit" className="w-full rounded-full shadow-sm" size="lg">
-                    Send Message
+                  <Button type="submit" className="w-full rounded-full shadow-sm" size="lg" disabled={isLoading}>
+                    {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…</> : "Send Message"}
                   </Button>
                 </form>
               )}
