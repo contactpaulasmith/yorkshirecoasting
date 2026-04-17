@@ -47,13 +47,13 @@ export const initialProperties: Property[] = [
     bathrooms: 2,
     pricePerNight: 195,
     airbnbLink: "https://www.airbnb.co.uk/rooms/701988237544422493",
-    benefits: ["5 mins to North Bay beach", "Private courtyard & deck", "Moments from Peasholm Park", "Self check-in (lockbox)", "10 mins to North York Moors", "Free on-street parking", "Smart TVs with Netflix", "Sleeps 6 in five-star comfort"],
+    benefits: ["10 mins walk to North Bay", "Private courtyard & deck", "Moments from Peasholm Park", "Self check-in (lockbox)", "10 mins to North York Moors", "Free on-street parking", "Smart TVs with Netflix", "Sleeps 6 in five-star comfort"],
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-out is 10am." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
       { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
-      { question: "North Bay beach", answer: "A 5-minute walk through Peasholm Park brings you straight to North Bay beach." }
+      { question: "North Bay beach", answer: "A 10-minute walk through Peasholm Park brings you straight to North Bay beach." }
     ],
     images: [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/34d4a8b8-01f3-46e3-ad87-f64d08762106.jpeg?im_w=1440",
