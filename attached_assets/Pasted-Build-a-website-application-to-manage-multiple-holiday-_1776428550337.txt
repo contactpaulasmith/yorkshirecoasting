@@ -1,0 +1,141 @@
+Build a website application to manage multiple holiday let properties and attract potential guests to book – this solution will be built in phases. 
+
+The brand should feel warm, welcoming, high-quality, and relaxing — like a premium home away from home.
+The website should include:
+1.	A homepage with:
+•	A large hero image (cosy, stylish holiday property)
+•	Clear call-to-action buttons (e.g. “View Properties”, “Book Now”)
+2.	A properties page:
+•	Grid layout of properties
+•	Each property should include:
+o	Image
+o	Name
+o	Short description
+o	Price per night
+o	“View Details” button
+3.	Property detail page:
+•	Image gallery
+•	Full description
+•	Key features (e.g. location, number of guests, amenities)
+•	Booking link or enquiry form
+4.	Contact section:
+•	Simple enquiry form (name, email, message)
+•	Optional phone number and location
+5.	FAQs
+1.	Location
+2.	Ability to add other content
+6.	Design style:
+•	Warm colour palette (beige, soft browns, off-white)
+•	Clean, modern layout
+•	High-end but cosy feel (like Airbnb premium listings)
+•	Use plenty of whitespace and soft shadows
+6.	Technical requirements:
+•	Use React (or Next.js if possible)
+•	Mobile responsive design
+•	Clean, well-structured code
+•	Use reusable components
+•	Include placeholder images and dummy data
+Make the site feel premium, calm, and inviting — not corporate or overly minimal.
+
+Please build phase 1 considering future phases of functionality outlined
+Phase 1 should be built first with awareness of future phases and have the objective to give potential guests confidence to book 
+Phase 1 – Simple Property Showcasing for each property
+•	Hero video 
+•	7-10 strong photos per property 
+•	Space to outline Clear benefits for each property: 
+o	“2 min walk to beach” 
+o	“Dog friendly” 
+o	“Free parking” 
+•	“Check availability” → Airbnb link 
+•	FAQs (parking, check-in, etc.) 
+Must be responsive and optimized for working on mobile phones.
+It should have a clean, simple and warm design
+
+Future phases:
+The website purpose in the future is : to promote multiple holiday let accommodations to grow bookings and minimize the effort to welcome and communicate with guests who have booked direct and contractors who assist in cleaning and other maintenance services
+There are 3 primary users
+1.	Potential Guests who will book
+2.	Administrators who will contribute content, add properties, engage with guests and maintenance and cleaning contractors
+3.	Indirectly - Cleaning and other contractors who will receive and send communications in relation to the properties and booking
+Each user type will see different aspects of the website
+
+
+Phase 1 should include the following functionality for administrators
+Property Sections on the website 
+1.	Property Overview:
+To view property rooms and features with visuals and text descriptions
+There should be an ability to highlight what is available at the property in terms of household utensils and other things people want to know e.g bedding / towels
+Links to social media posts to bring the property to life
+Location details and transport options
+2.	Reviews section: 
+1-5 star Reviews from guests that have been approved to appear on the website by the administrator
+links to other booking site reviews for the property
+3.	Booking:
+The booking page should also support links to booking platforms linked to the property so the user can choose to booked with a reputable booking platform
+4.	Things to do & See
+A filterable list of tourist attractions, restaurants should be linked to each property but maintained centrally by the administration.  Guest should be able to see all items or filter to see specific categories like places to eat.  
+Each item in the list should have and image or embedded video, a place to provide a hyperlink to an external site and text to describe the item.  
+
+5.	FAQs
+A section to contain information about the property they have booked including
+•	Wifi details
+•	Bins
+•	Owner contact details
+•	And other relevant information
+A contact us form for enquiries
+
+
+
+Admin section for phase 1
+The administrator should be able to access an admin area for each property they are authorised to see to: 
+1.	Add a new property and the associated details including a link for booking a link for reviews 
+a)	An area to Maintain items for the Things to do and see section of the website
+2.	Ability to select which See and Do items are linked to which property. Each property should only show the selected items vs all items
+
+Administration section for future phases
+The administrator should be able to access an admin area for each property they are authorised to see to: 
+3.	Add a new property and the associated details
+4.	Update details about the property
+5.	Details available only for booked guests
+6.	See and respond to potential bookings
+7.	Receive reviews – for general public and only for administrators from guests
+8.	Send guests a login for their stay if they booked via the website directly so they can access more information
+Communication
+9.	Store Communication templates for quick emails and WhatsApp messages to guests
+10.	Set templates for key milestones of a stay.  Including
+a.	Thank you for booking
+b.	Thank you for payment message
+c.	Welcome message
+d.	Check out Message
+e.	Request for a review
+Create templates for communicating with Maintenance contractors
+a)	Payment transferred
+b)	Can you do changeover
+c)	General Request
+Ability to store email addresses of people to regularly communicate with
+11.	All communication for a property should be linked to the booking record
+12.	See booking history
+Booking Admin area
+•	To see availability on a calendar with availability based on a linked gmail calendar
+•	The ability to request a booking for available time periods with the cost shown to the booker.  The rate should be determined based on a linked booking platform with the ability to apply a discount OR the ability to enter daily pricing.
+•	The website should enter the requested booking in the linked Gmail calendar marked as tentative (ready for the administrator to approve)
+
+13.	Link and sync connected calendars to the booking calendar to show booked and available periods
+14.	Administrator should be able to block periods in the calendar which should synchronize to linked calendars
+15.	Set pricing efficiently for each property/day with the ability to copy pricing between properties and between years
+16.	Ability to apply a discount to any period or date range
+17.	Ability to define periods as listed as an example and apply to a calenda based on the year in a given year and associate pricing Mon-Thur, Fri & Day and Sunday
+a.	Winter
+b.	Holiday Season
+c.	School holidays
+d.	Spring
+e.	Summer 
+f.	High Summer
+g.	Autumn
+h.	Public Holidays
+i.	Christmas and New Year
+18.	See all public and school holidays for a nominated region for the property when creating pricing
+
+See and Do items
+Things to see and do section
+b)	Guest should be able to add their own review or comments relating to a listed item
