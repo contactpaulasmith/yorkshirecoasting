@@ -1,21 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import { Property, ThingToDo, Review, initialProperties, initialThingsToDo, initialReviews } from "../data/initialData";
-
-const DATA_VERSION = "v7";
-
-function clearStaleData() {
-  const version = localStorage.getItem("coastal_data_version");
-  if (version !== DATA_VERSION) {
-    ["coastal_properties", "coastal_things", "coastal_reviews", "coastal_data_version"].forEach(k =>
-      localStorage.removeItem(k)
-    );
-  }
-}
-
-function loadOrInit<T>(key: string, fallback: T): T {
-  const saved = localStorage.getItem(key);
-  return saved ? JSON.parse(saved) as T : fallback;
-}
 
 interface AppState {
   properties: Property[];
@@ -32,25 +16,9 @@ interface AppState {
 const AppContext = createContext<AppState | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [properties, setProperties] = useState<Property[]>(() => { clearStaleData(); return loadOrInit("coastal_properties", initialProperties); });
-  const [thingsToDo, setThingsToDo] = useState<ThingToDo[]>(() => loadOrInit("coastal_things", initialThingsToDo));
-  const [reviews, setReviews] = useState<Review[]>(() => loadOrInit("coastal_reviews", initialReviews));
-
-  useEffect(() => {
-    localStorage.setItem("coastal_data_version", DATA_VERSION);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("coastal_properties", JSON.stringify(properties));
-  }, [properties]);
-
-  useEffect(() => {
-    localStorage.setItem("coastal_things", JSON.stringify(thingsToDo));
-  }, [thingsToDo]);
-
-  useEffect(() => {
-    localStorage.setItem("coastal_reviews", JSON.stringify(reviews));
-  }, [reviews]);
+  const [properties, setProperties] = useState<Property[]>(initialProperties);
+  const [thingsToDo, setThingsToDo] = useState<ThingToDo[]>(initialThingsToDo);
+  const [reviews, setReviews] = useState<Review[]>(initialReviews);
 
   const updateProperty = (property: Property) => {
     setProperties(prev => prev.map(p => p.id === property.id ? property : p));
