@@ -59,8 +59,8 @@ export default function Properties() {
                     </div>
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
-                    <div className="flex items-center text-muted-foreground text-sm mb-3">
-                      <MapPin size={14} className="mr-1.5" /> {property.location}
+                    <div className="flex items-start text-muted-foreground text-sm mb-3">
+                      <MapPin size={20} className="mr-1.5 mt-0.5 shrink-0" /> {property.location}
                     </div>
                     <h2 className="font-serif text-2xl font-medium mb-3 text-foreground group-hover:text-primary transition-colors">
                       {property.name}
