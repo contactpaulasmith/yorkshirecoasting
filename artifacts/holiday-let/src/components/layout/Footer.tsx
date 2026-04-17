@@ -49,10 +49,9 @@ export default function Footer() {
               <li>hello@yorkshirecoasting.co.uk</li>
               <li>+44 (0) 7715 417 923</li>
               <li className="pt-2">
-                YorkshireCoasting Ltd<br/>
-                14 Harbour Road<br/>
-                Scarborough, North Yorkshire<br/>
-                YO11 1XX
+                YorkshireCoasting<br/>
+                Hosts: Mark &amp; Paula Smith<br/>
+                Scarborough, North Yorkshire
               </li>
             </ul>
           </div>
