@@ -29,12 +29,12 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="bg-card py-16 md:py-24 border-b border-border">
+      <div className="bg-primary py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-serif text-primary mb-6"
+            className="text-4xl md:text-5xl font-serif text-primary-foreground mb-6"
           >
             Get in Touch
           </motion.h1>
@@ -42,7 +42,7 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-primary-foreground/75 max-w-2xl mx-auto"
           >
             Whether you have a question about a specific property or need help planning your stay, we're here to help.
           </motion.p>

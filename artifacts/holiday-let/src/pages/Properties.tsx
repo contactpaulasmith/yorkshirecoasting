@@ -17,12 +17,12 @@ export default function Properties() {
 
   return (
     <Layout>
-      <div className="bg-card py-16 md:py-24 border-b border-border">
+      <div className="bg-primary py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-serif text-primary mb-6"
+            className="text-4xl md:text-5xl font-serif text-primary-foreground mb-6"
           >
             Our Collection
           </motion.h1>
@@ -30,7 +30,7 @@ export default function Properties() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-primary-foreground/75 max-w-2xl mx-auto"
           >
             Discover our hand-picked selection of premium coastal properties on the North Yorkshire coast, ready to welcome you.
           </motion.p>
