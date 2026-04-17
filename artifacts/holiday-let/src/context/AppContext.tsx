@@ -1,13 +1,18 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { Property, ThingToDo, Review, initialProperties, initialThingsToDo, initialReviews } from "../data/initialData";
 
-const DATA_VERSION = "v6";
+const DATA_VERSION = "v7";
 
-function loadOrInit<T>(key: string, fallback: T): T {
+function clearStaleData() {
   const version = localStorage.getItem("coastal_data_version");
   if (version !== DATA_VERSION) {
-    return fallback;
+    ["coastal_properties", "coastal_things", "coastal_reviews", "coastal_data_version"].forEach(k =>
+      localStorage.removeItem(k)
+    );
   }
+}
+
+function loadOrInit<T>(key: string, fallback: T): T {
   const saved = localStorage.getItem(key);
   return saved ? JSON.parse(saved) as T : fallback;
 }
@@ -27,7 +32,7 @@ interface AppState {
 const AppContext = createContext<AppState | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [properties, setProperties] = useState<Property[]>(() => loadOrInit("coastal_properties", initialProperties));
+  const [properties, setProperties] = useState<Property[]>(() => { clearStaleData(); return loadOrInit("coastal_properties", initialProperties); });
   const [thingsToDo, setThingsToDo] = useState<ThingToDo[]>(() => loadOrInit("coastal_things", initialThingsToDo));
   const [reviews, setReviews] = useState<Review[]>(() => loadOrInit("coastal_reviews", initialReviews));
 
