@@ -50,8 +50,8 @@ export default function Footer() {
               <li>+44 (0) 7715 417 923</li>
               <li className="pt-2">
                 YorkshireCoasting<br/>
-                Hosts: Mark &amp; Paula Smith<br/>
-                Scarborough, North Yorkshire
+                Mark &amp; Paula Smith (Owners)<br/>
+                Scarborough
               </li>
             </ul>
           </div>
