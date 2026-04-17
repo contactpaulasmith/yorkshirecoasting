@@ -72,8 +72,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Email</h3>
-                    <a href="mailto:hello@yorkshirecoasting.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
-                      hello@yorkshirecoasting.co.uk
+                    <a href="mailto:contactus@yorkshirecoasting.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
+                      contactus@yorkshirecoasting.co.uk
                     </a>
                   </div>
                 </div>

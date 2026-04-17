@@ -28,7 +28,7 @@ export default function Footer() {
               <a href="https://www.tiktok.com/@scarboroughholidays" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <TikTokIcon size={20} />
               </a>
-              <a href="mailto:hello@yorkshirecoasting.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:contactus@yorkshirecoasting.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={20} />
               </a>
             </div>
@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <h3 className="font-medium text-sm tracking-wider uppercase mb-4 text-foreground">Contact</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>hello@yorkshirecoasting.co.uk</li>
+              <li>contactus@yorkshirecoasting.co.uk</li>
               <li>+44 (0) 7715 417 923</li>
               <li className="pt-2">
                 YorkshireCoasting<br/>
