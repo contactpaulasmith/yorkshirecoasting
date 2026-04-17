@@ -53,23 +53,22 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button 
-              size="lg" 
-              className="rounded-full text-base px-8 h-14 bg-primary text-primary-foreground hover:bg-primary/90"
+            <button
+              className="rounded-full text-base px-8 h-14 font-semibold shadow-lg cursor-pointer transition-opacity hover:opacity-90"
+              style={{ backgroundColor: '#ffffff', color: '#3C577A' }}
               onClick={() => setLocation("/properties")}
               data-testid="button-view-properties"
             >
               View Our Properties
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full text-base px-8 h-14 bg-white/10 border-white text-white hover:bg-white hover:text-foreground backdrop-blur-sm"
+            </button>
+            <button
+              className="rounded-full text-base px-8 h-14 font-semibold shadow-lg cursor-pointer border border-white/40 transition-opacity hover:opacity-90 backdrop-blur-sm"
+              style={{ backgroundColor: 'rgba(60,87,122,0.75)', color: '#ffffff' }}
               onClick={() => setLocation("/contact")}
               data-testid="button-book-now"
             >
               Book Now
-            </Button>
+            </button>
           </motion.div>
         </div>
       </section>
