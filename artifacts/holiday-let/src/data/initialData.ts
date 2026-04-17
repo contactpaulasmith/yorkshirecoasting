@@ -49,7 +49,7 @@ export const initialProperties: Property[] = [
     airbnbLink: "https://www.airbnb.co.uk/rooms/701988237544422493",
     benefits: ["10 mins walk to North Bay", "Private courtyard & deck", "Moments from Peasholm Park", "Self check-in (lockbox)", "30 mins to North York Moors", "Free on-street parking", "Smart TVs with Netflix", "Sleeps 6 in five-star comfort"],
     faqs: [
-      { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-out is 10am." },
+      { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
       { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
@@ -81,7 +81,7 @@ export const initialProperties: Property[] = [
     airbnbLink: "https://www.airbnb.co.uk/rooms/1880508",
     benefits: ["Walk to South Bay beach & town centre", "Private gardens & decking", "Enclosed patio", "Self check-in (lockbox)", "Free on-street parking", "Washing machine & tumble dryer", "Travel cot & high chair available", "5-star TripAdvisor rating"],
     faqs: [
-      { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-out is 10am." },
+      { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
       { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
