@@ -11,7 +11,7 @@ export default function NotFound() {
         <p className="text-6xl font-serif text-primary/30 mb-6">404</p>
         <h1 className="text-3xl font-serif text-foreground mb-4">Page not found</h1>
         <p className="text-muted-foreground max-w-md mb-8">
-          The page you are looking for does not exist or may have moved. Head back to our homepage to explore Cornwall's finest holiday homes.
+          The page you are looking for does not exist or may have moved. Head back to our homepage to explore our North Yorkshire coastal properties.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <Button onClick={() => setLocation("/")} className="rounded-full px-8">

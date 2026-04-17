@@ -26,8 +26,8 @@ export default function Home() {
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85" 
-          alt="Beautiful Cornwall coastal beach on a sunny day" 
+          src="https://picsum.photos/id/16/1920/1080" 
+          alt="Beautiful North Yorkshire coastline on a sunny day" 
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
@@ -45,7 +45,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-xl font-light mb-10 text-white/90 max-w-2xl mx-auto drop-shadow-md"
           >
-            A curated collection of premium holiday homes in Cornwall's most beautiful corners. Designed for unhurried living.
+            A curated collection of premium holiday homes on the North Yorkshire coast. Clifftops, harbours, and wide open skies.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h2 className="font-serif text-2xl font-semibold text-primary mb-4">Shoreline Stays</h2>
             <p className="text-muted-foreground text-sm max-w-sm mb-6 leading-relaxed">
-              A curated collection of premium coastal holiday lets in Cornwall. Discover your home away from home, where every detail is considered for an unhurried, welcoming stay.
+              A curated collection of premium coastal holiday lets on the North Yorkshire coast. Discover your home away from home, where every detail is considered for an unhurried, welcoming stay.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -43,8 +43,8 @@ export default function Footer() {
               <li className="pt-2">
                 Shoreline Stays Ltd<br/>
                 14 Harbour Road<br/>
-                Padstow, Cornwall<br/>
-                PL28 8XX
+                Scarborough, North Yorkshire<br/>
+                YO11 1XX
               </li>
             </ul>
           </div>

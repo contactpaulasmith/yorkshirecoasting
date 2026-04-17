@@ -32,7 +32,7 @@ export default function Properties() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Discover our hand-picked selection of premium coastal properties in Cornwall, ready to welcome you.
+            Discover our hand-picked selection of premium coastal properties on the North Yorkshire coast, ready to welcome you.
           </motion.p>
         </div>
       </div>

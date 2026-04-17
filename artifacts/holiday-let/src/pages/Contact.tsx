@@ -100,8 +100,8 @@ export default function Contact() {
                     <p className="text-muted-foreground">
                       Shoreline Stays Ltd<br/>
                       14 Harbour Road<br/>
-                      Padstow, Cornwall<br/>
-                      PL28 8XX
+                      Scarborough, North Yorkshire<br/>
+                      YO11 1XX
                     </p>
                   </div>
                 </div>
