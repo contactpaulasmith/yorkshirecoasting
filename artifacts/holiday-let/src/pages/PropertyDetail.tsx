@@ -91,31 +91,23 @@ export default function PropertyDetail() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Desktop: hero collage — image[0] large left, images[1..4] grid right */}
-          <div className="hidden md:grid md:grid-cols-4 md:grid-rows-2 gap-4 h-[50vh] min-h-[400px] max-h-[600px] rounded-2xl overflow-hidden mb-4">
-            <div className="md:col-span-2 md:row-span-2">
+          {/* Hero collage — image[0] large left, images[1..4] grid right */}
+          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-2 md:gap-4 h-[40vh] md:h-[50vh] min-h-[280px] md:min-h-[400px] max-h-[560px] rounded-2xl overflow-hidden mb-4">
+            <div className="col-span-2 row-span-2">
               <img src={property.images[0]} alt={`${property.name} main`} className="w-full h-full object-cover" />
             </div>
             {property.images.slice(1, 5).map((img, idx) => (
-              <div key={idx}>
+              <div key={idx} className="hidden md:block">
                 <img src={img} alt={`${property.name} photo ${idx + 2}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
-          {/* Mobile: full scrollable strip showing all images */}
-          <div className="flex md:hidden gap-3 overflow-x-auto pb-2 rounded-xl mb-4">
-            {property.images.map((img, idx) => (
-              <div key={idx} className="shrink-0 w-72 h-52 rounded-xl overflow-hidden">
-                <img src={img} alt={`${property.name} photo ${idx + 1}`} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-          {/* Desktop: additional images (6–10) in a scrollable row */}
+          {/* All remaining photos in a responsive grid */}
           {property.images.length > 5 && (
-            <div className="hidden md:flex gap-3 overflow-x-auto pb-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
               {property.images.slice(5).map((img, idx) => (
-                <div key={idx} className="shrink-0 w-48 h-32 rounded-xl overflow-hidden">
-                  <img src={img} alt={`${property.name} photo ${idx + 6}`} className="w-full h-full object-cover" />
+                <div key={idx} className="aspect-[4/3] rounded-xl overflow-hidden">
+                  <img src={img} alt={`${property.name} photo ${idx + 6}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
               ))}
             </div>
