@@ -53,7 +53,8 @@ export const initialProperties: Property[] = [
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
       { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
-      { question: "North Bay beach", answer: "A 10-minute walk through Peasholm Park brings you straight to North Bay beach." }
+      { question: "North Bay beach", answer: "A 10-minute walk through Peasholm Park brings you straight to North Bay beach." },
+      { question: "Fold-out bed / Cot", answer: "A fold-out bed and Portable Cot is available on request to accommodate an extra guest / child." }
     ],
     images: [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/34d4a8b8-01f3-46e3-ad87-f64d08762106.jpeg?im_w=1440",
@@ -85,7 +86,7 @@ export const initialProperties: Property[] = [
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
       { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
-      { question: "Fold-out bed", answer: "A fold-out bed is available on request, accommodating up to 5 guests. A portable cot and high chair can also be provided." }
+      { question: "Fold-out bed / Cot", answer: "A fold-out bed and Portable Cot is available on request to accommodate an extra guest / child." }
     ],
     images: [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/f305f979-ceeb-4a25-a274-24a4397ed293.jpeg?im_w=1440",
