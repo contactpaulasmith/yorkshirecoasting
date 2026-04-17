@@ -51,7 +51,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
       `}>
         <div className="h-16 flex items-center justify-between px-6 border-b border-border">
-          <span className="font-serif text-lg font-semibold text-primary">Shoreline Admin</span>
+          <span className="font-serif text-lg font-semibold text-primary">YorkshireCoasting Admin</span>
           <button onClick={() => setIsMobileOpen(false)} className="lg:hidden text-muted-foreground">
             <X size={20} />
           </button>
@@ -102,7 +102,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           >
             <Menu size={24} />
           </button>
-          <span className="font-serif font-medium text-primary ml-2">Shoreline Admin</span>
+          <span className="font-serif font-medium text-primary ml-2">YorkshireCoasting Admin</span>
         </header>
 
         <div className="flex-1 overflow-auto p-4 sm:p-6 lg:p-8">

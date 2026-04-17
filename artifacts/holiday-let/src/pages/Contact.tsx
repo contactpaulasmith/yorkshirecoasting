@@ -72,8 +72,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Email</h3>
-                    <a href="mailto:hello@shorelinestays.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
-                      hello@shorelinestays.co.uk
+                    <a href="mailto:hello@yorkshirecoasting.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
+                      hello@yorkshirecoasting.co.uk
                     </a>
                   </div>
                 </div>
@@ -84,8 +84,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Phone</h3>
-                    <a href="tel:+441637800000" className="text-muted-foreground hover:text-primary transition-colors">
-                      +44 (0) 1637 800 000
+                    <a href="tel:+441723800000" className="text-muted-foreground hover:text-primary transition-colors">
+                      +44 (0) 1723 800 000
                     </a>
                     <p className="text-sm text-muted-foreground/70 mt-1">Mon-Fri, 9am - 5pm</p>
                   </div>
@@ -98,7 +98,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-medium mb-1">Office</h3>
                     <p className="text-muted-foreground">
-                      Shoreline Stays Ltd<br/>
+                      YorkshireCoasting Ltd<br/>
                       14 Harbour Road<br/>
                       Scarborough, North Yorkshire<br/>
                       YO11 1XX

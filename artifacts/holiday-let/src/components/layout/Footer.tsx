@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           
           <div className="md:col-span-2">
-            <h2 className="font-serif text-2xl font-semibold text-primary mb-4">Shoreline Stays</h2>
+            <h2 className="font-serif text-2xl font-semibold text-primary mb-4">YorkshireCoasting.co.uk</h2>
             <p className="text-muted-foreground text-sm max-w-sm mb-6 leading-relaxed">
               A curated collection of premium coastal holiday lets on the North Yorkshire coast. Discover your home away from home, where every detail is considered for an unhurried, welcoming stay.
             </p>
@@ -20,7 +20,7 @@ export default function Footer() {
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="mailto:hello@shorelinestays.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:hello@yorkshirecoasting.co.uk" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={20} />
               </a>
             </div>
@@ -38,10 +38,10 @@ export default function Footer() {
           <div>
             <h3 className="font-medium text-sm tracking-wider uppercase mb-4 text-foreground">Contact</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>hello@shorelinestays.co.uk</li>
-              <li>+44 (0) 1637 800 000</li>
+              <li>hello@yorkshirecoasting.co.uk</li>
+              <li>+44 (0) 1723 800 000</li>
               <li className="pt-2">
-                Shoreline Stays Ltd<br/>
+                YorkshireCoasting Ltd<br/>
                 14 Harbour Road<br/>
                 Scarborough, North Yorkshire<br/>
                 YO11 1XX
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Shoreline Stays Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} YorkshireCoasting Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
