@@ -38,31 +38,29 @@ export interface Review {
 export const initialProperties: Property[] = [
   {
     id: "p1",
-    slug: "bay-view-cottage",
-    name: "Bay View Cottage",
+    slug: "the-courtyard",
+    name: "The Courtyard",
     location: "Scarborough, North Yorkshire",
-    description: "A beautifully restored fisherman's cottage perched above Scarborough's South Bay, with sweeping views over the harbour and castle headland. Original stone walls meet contemporary interiors — crisp white linen, a wood-burning stove, and a sun terrace that catches the golden hour perfectly.",
-    sleeps: 4,
-    bedrooms: 2,
-    bathrooms: 1,
-    pricePerNight: 245,
-    airbnbLink: "https://www.airbnb.co.uk",
-    benefits: ["5 min walk to South Bay beach", "Sea and castle views", "Dog friendly", "Free parking", "Private sun terrace", "Wood-burning stove"],
+    description: "Stunning open-plan living that flows out onto a private courtyard — moments from Peasholm Park and North Bay beach. Two double bedrooms and bathroom on the first floor, plus an additional master bedroom and en-suite in the dormer suite. Appointed to the highest standards with oak furniture, plush king sleigh beds and smart TVs with Netflix. Five-star comfort close to Scarborough's best attractions.",
+    sleeps: 6,
+    bedrooms: 3,
+    bathrooms: 2,
+    pricePerNight: 195,
+    airbnbLink: "https://www.airbnb.co.uk/rooms/701988237544422493",
+    benefits: ["5 mins to North Bay beach", "Private courtyard & deck", "Moments from Peasholm Park", "Self check-in (lockbox)", "10 mins to North York Moors", "Free on-street parking", "Smart TVs with Netflix", "Sleeps 6 in five-star comfort"],
     faqs: [
-      { question: "Check-in / Check-out", answer: "Check-in is 4pm / Check-out is 10am" },
-      { question: "Parking", answer: "Free parking for 1 car on the drive" },
-      { question: "Pets", answer: "Dogs welcome (max 2, well-behaved)" },
-      { question: "Wifi", answer: "Network: BayViewCottage — Password: scarborough2024" },
-      { question: "Bins", answer: "Bins collected Tuesday — black bin only" }
+      { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-out is 10am." },
+      { question: "Parking", answer: "Free on-street parking directly outside the property." },
+      { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
+      { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
+      { question: "North Bay beach", answer: "A 5-minute walk through Peasholm Park brings you straight to North Bay beach." }
     ],
     images: [
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-      "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=800&q=80",
-      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80"
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/34d4a8b8-01f3-46e3-ad87-f64d08762106.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/ad753ebb-ea55-462a-9191-c078fa87e326.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/b74e8f62-0cc1-4606-a29b-d71577b78aa7.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/a8bd3b1f-639e-4a12-84f1-366423c0cec4.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/d89e5458-30c8-4aff-a01c-a186850d72ae.jpeg?im_w=1440"
     ]
   },
   {
