@@ -10,21 +10,41 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Instagram, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const CONTACT_EMAIL = "contactus@yorkshirecoasting.co.uk";
+
 export default function Contact() {
   const { properties } = useAppContext();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [property, setProperty] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitted(true);
-      toast({
-        title: "Message sent",
-        description: "We'll get back to you as soon as possible.",
-      });
-    }, 800);
+
+    const propertyLabel = property === "general" || !property
+      ? "General Enquiry"
+      : properties.find(p => p.id === property)?.name ?? property;
+
+    const subject = encodeURIComponent(`YorkshireCoasting Enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone || "Not provided"}\n` +
+      `Property: ${propertyLabel}\n\n` +
+      `Message:\n${message}`
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+    setIsSubmitted(true);
+    toast({
+      title: "Opening your email app…",
+      description: `Your enquiry will be sent to ${CONTACT_EMAIL}.`,
+    });
   };
 
   return (
@@ -145,22 +165,22 @@ export default function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Full Name *</Label>
-                        <Input id="name" required placeholder="Jane Doe" className="bg-background" />
+                        <Input id="name" required placeholder="Jane Doe" className="bg-background" value={name} onChange={e => setName(e.target.value)} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email Address *</Label>
-                        <Input id="email" type="email" required placeholder="jane@example.com" className="bg-background" />
+                        <Input id="email" type="email" required placeholder="jane@example.com" className="bg-background" value={email} onChange={e => setEmail(e.target.value)} />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number (Optional)</Label>
-                      <Input id="phone" type="tel" placeholder="+44..." className="bg-background" />
+                      <Input id="phone" type="tel" placeholder="+44..." className="bg-background" value={phone} onChange={e => setPhone(e.target.value)} />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="property">Property of Interest (Optional)</Label>
-                      <Select>
+                      <Select value={property} onValueChange={setProperty}>
                         <SelectTrigger className="bg-background">
                           <SelectValue placeholder="Select a property" />
                         </SelectTrigger>
@@ -181,6 +201,8 @@ export default function Contact() {
                         placeholder="How can we help you?" 
                         rows={5}
                         className="bg-background resize-none"
+                        value={message}
+                        onChange={e => setMessage(e.target.value)}
                       />
                     </div>
                   </div>
