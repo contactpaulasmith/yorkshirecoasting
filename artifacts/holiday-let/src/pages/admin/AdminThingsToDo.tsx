@@ -81,7 +81,7 @@ export default function AdminThingsToDo() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label>Category</Label>
-                  <Select value={formData.category} onValueChange={(val: any) => setFormData({...formData, category: val})}>
+                  <Select value={formData.category} onValueChange={(val) => setFormData({...formData, category: val as ThingToDo["category"]})}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
