@@ -89,12 +89,15 @@ export const initialProperties: Property[] = [
     ],
     images: [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/f305f979-ceeb-4a25-a274-24a4397ed293.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/a768f16c-d30c-46aa-9676-9db8b2beeb34.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/eff9bb06-87f6-4c2a-aea7-9504a790ab80.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/9342a9f2-6c1a-4ad3-9fef-fd03e4ac0a36.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/c210fe63-f252-4e3d-9be3-f1e81532ecf9.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/ca939f38-483c-4434-b336-eee0dcd74f51.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/e6c385ea-7ed1-492e-851d-fe3fe0711343.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/25fa14a8-68a5-44cd-bc54-352d1674452f.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/09ee24b2-cc69-493d-8e02-c2de847e273c.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/6e8dc1aa-870e-4ae6-8287-2a209f6d918f.jpeg?im_w=1440"
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/6e8dc1aa-870e-4ae6-8287-2a209f6d918f.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/e0d2e668-4901-4a2c-8542-7a1cee53c329.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/620ae21e-5fd7-41e9-844a-92243882021c.jpeg?im_w=1440",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTg4MDUwOA%3D%3D/original/1b0025b0-3eb8-4eeb-875e-415dcebdd4e9.jpeg?im_w=1440"
     ]
   }
 ];
