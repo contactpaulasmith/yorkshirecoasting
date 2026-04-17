@@ -1,0 +1,68 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "OeyHYXtW5b9sDIGSKefX6"
+uri = "file://artifacts/holiday-let/public/images/hero.jpg"
+type = "image"
+title = "Cornwall coastal cottage exterior sunny day"
+
+[[outputs]]
+id = "m79iyFuRGOvusoRHDiLpr"
+uri = "file://artifacts/holiday-let/public/images/lighthouse-cottage.jpg"
+type = "image"
+title = "beautiful restored fisherman cottage sea view interior"
+
+[[outputs]]
+id = "myriomthQzlO1Wsi3bSkk"
+uri = "file://artifacts/holiday-let/public/images/harbour-house.jpg"
+type = "image"
+title = "Georgian townhouse luxury kitchen garden"
+
+[[outputs]]
+id = "9RE0ACxGNSZzQcUe4-rJy"
+uri = "file://artifacts/holiday-let/public/images/cliff-retreat.jpg"
+type = "image"
+title = "modern cliff edge retreat sea view sunset"
+
+[[outputs]]
+id = "DW1m8FkAMsBH05jd2HJp5"
+uri = "file://artifacts/holiday-let/public/images/gallery_1.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
+
+[[outputs]]
+id = "XeTg1oAzq_kTNzGWP5HjJ"
+uri = "file://artifacts/holiday-let/public/images/gallery_2.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
+
+[[outputs]]
+id = "vntwdNO0k9Vr-pTMdLtHo"
+uri = "file://artifacts/holiday-let/public/images/gallery_3.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
+
+[[outputs]]
+id = "3BLlfaDdTY0UB-0zQ33_C"
+uri = "file://artifacts/holiday-let/public/images/gallery_4.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
+
+[[outputs]]
+id = "v01AsdzjV5-K13-PCHWoC"
+uri = "file://artifacts/holiday-let/public/images/gallery_5.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
+
+[[outputs]]
+id = "rOPQnpZHlV_OmBlzsXRj9"
+uri = "file://artifacts/holiday-let/public/images/gallery_6.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
+
+[[outputs]]
+id = "m0PuxQuDI040ClG8JLKJN"
+uri = "file://artifacts/holiday-let/public/images/gallery_7.jpg"
+type = "image"
+title = "coastal holiday property interior and exterior details"
