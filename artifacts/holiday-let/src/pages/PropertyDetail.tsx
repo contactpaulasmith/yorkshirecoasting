@@ -152,7 +152,7 @@ export default function PropertyDetail() {
             {/* Things To Do — hidden for now, re-enable by changing false to true */}
             {false && <section>
               <h2 className="text-2xl font-serif text-primary mb-2">Local Area</h2>
-              <p className="text-muted-foreground mb-8">Our curated guide to the best of {property.location.split(',')[0]} and beyond.</p>
+              <p className="text-muted-foreground mb-8">Our curated guide to the best of {property?.location.split(',')[0]} and beyond.</p>
               
               <Tabs defaultValue="All" className="w-full">
                 <TabsList className="mb-6 flex flex-wrap h-auto bg-transparent gap-2">
