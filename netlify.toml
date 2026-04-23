@@ -1,0 +1,8 @@
+[build]
+  command = "pnpm --filter @workspace/holiday-let run build"
+  publish = "artifacts/holiday-let/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
