@@ -68,7 +68,8 @@ export const initialProperties: Property[] = [
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/5f6e9670-6002-4664-a585-65a325f12c5a.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/2de2e7c7-948a-4560-bc0a-dec9216a2713.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzAxOTg4MjM3NTQ0NDIyNDkz/original/1d7a3567-ed99-470f-9d82-71ddb9518b86.jpeg?im_w=1440",
-      "https://a0.muscache.com/im/pictures/hosting/Hosting-701988237544422493/original/5581b865-8d99-4ee3-b3cd-eacb6630f79c.jpeg?im_w=1440"
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-701988237544422493/original/0b3f5898-d62e-4fa6-8b1f-641f09a0daef.jpeg?im_w=720",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-701988237544422493/original/5581b865-8d99-4ee3-b3cd-eacb6630f79c.jpeg?im_w=1920"
     ]
   },
   {
