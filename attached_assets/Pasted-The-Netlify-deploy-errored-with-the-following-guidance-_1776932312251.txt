@@ -1,0 +1,116 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Relevant error lines
+- [line 85](#L85) shows Vite failed to load the project config.
+- [line 87](#L87) is the actual failure: "Error: PORT environment variable is required but was not provided."
+- [line 88](#L88) shows the error is thrown while loading modules/config during the build.
+
+Diagnosis
+- Error type: runtime exception thrown while loading Vite config (build-time crash).
+- Cause: your Vite (or another config file loaded by Vite) requires process.env.PORT and throws when it's missing. That requirement runs during config loading, so the build aborts on Netlify because PORT is not set in the build environment.
+
+Solution (two safe options — pick one)
+
+Option A — Set PORT in Netlify build environment (quick)
+1. In the Netlify UI go to Site settings → Build & deploy → Environment → Environment variables, add:
+   - Key: PORT
+   - Value: 5173
+2. Re-run the build.
+
+Alternatively add the env var in netlify.toml:
+```toml
+[build.environment]
+  PORT = "5173"
+```
+
+Option B — Make the config tolerant (recommended long-term)
+Edit the Vite config (or whatever file enforces PORT) in artifacts/mockup-sandbox so it doesn't throw during build and uses a sensible default. For example, in artifacts/mockup-sandbox/vite.config.ts (or .js) change the strict check:
+
+Before (problematic — throws when PORT is missing):
+```ts
+if (!process.env.PORT) throw new Error('PORT environment variable is required');
+```
+
+After (use default and only require for dev if needed):
+```ts
+const PORT = process.env.PORT ?? '5173';
+
+export default defineConfig(({ command }) => {
+  return {
+    server: {
+      port: Number(PORT),
+    },
+    // other config...
+  };
+});
+```
+
+Or only require PORT for the dev server:
+```ts
+export default defineConfig(({ command }) => {
+  if (command === 'serve' && !process.env.PORT) {
+    throw new Error('PORT environment variable is required for local dev');
+  }
+  // use default for build:
+  const port = process.env.PORT ?? '5173';
+  return { server: { port: Number(port) } };
+});
+```
+
+Notes
+- The error originates while loading the project config (see [line 85](#L85) and [line 87](#L87)), so the fix must prevent the throw during config load (either by providing PORT in Netlify or by making the config tolerate a missing PORT).
+- If you edit files, commit them and push before re-running the Netlify build.
+
+The relevant error logs are:
+
+Line 71: > workspace@0.0.0 typecheck:libs /opt/build/repo
+Line 72: > tsc --build
+Line 73: Scope: 4 of 9 workspace projects
+Line 74: artifacts/api-server typecheck$ tsc -p tsconfig.json --noEmit
+Line 75: artifacts/holiday-let typecheck$ tsc -p tsconfig.json --noEmit
+Line 76: artifacts/mockup-sandbox typecheck$ tsc -p tsconfig.json --noEmit
+Line 77: artifacts/api-server typecheck: Done
+Line 78: scripts typecheck$ tsc -p tsconfig.json --noEmit
+Line 79: scripts typecheck: Done
+Line 80: artifacts/mockup-sandbox typecheck: Done
+Line 81: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 82: artifacts/holiday-let typecheck: Done
+Line 83: Scope: 8 of 9 workspace projects
+Line 84: artifacts/mockup-sandbox build$ vite build
+Line 85: artifacts/mockup-sandbox build: failed to load config from /opt/build/repo/artifacts/mockup-sandbo
+Line 86: artifacts/mockup-sandbox build: error during build:
+Line 87: artifacts/mockup-sandbox build: Error: PORT environment variable is required but was not provided.
+Line 88: artifacts/mockup-sandbox build:     at file:///opt/build/repo/artifacts/mockup-sandbox/node_modules/.vi
+Line 89: artifacts/mockup-sandbox build:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+Line 90: artifacts/mockup-sandbox build:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm
+Line 91: artifacts/mockup-sandbox build:     at async loadConfigFromBundledFile (file:///opt/build/repo/node_mod
+Line 92: artifacts/mockup-sandbox build:     at async bundleAndLoadConfigFile (file:///opt/build/repo/node_modul
+Line 93: artifacts/mockup-sandbox build:     at async loadConfigFromFile (file:///opt/build/repo/node_modules/.p
+Line 94: artifacts/mockup-sandbox build:     at async resolveConfig (file:///opt/build/repo/node_modules/.pnpm/v
+Line 95: artifacts/mockup-sandbox build:     at async createBuilder (file:///opt/build/repo/node_modules/.pnpm/v
+Line 96: artifacts/mockup-sandbox build:     at async CAC.<anonymous> (file:///opt/build/repo/node_modules/.pnpm
+Line 97: artifacts/mockup-sandbox build: Failed
+Line 98: /opt/build/repo/artifacts/mockup-sandbox:
+Line 99:  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/mockup-sandbox@2.0.0 build: `vite build`
+Line 100: Exit status 1
+Line 101:  ELIFECYCLE  Command failed with exit code 1.
+Line 102: ​
+Line 103: "build.command" failed                                        
+Line 104: ────────────────────────────────────────────────────────────────
+Line 105: ​
+Line 106:   Error message
+Line 107:   Command failed with exit code 1: pnpm run build
+Line 108: ​
+Line 109:   Error location
+Line 110:   In Build command from Netlify app:
+Line 111:   pnpm run build
+Line 112: ​
+Line 113:   Resolved config
+Line 114:   build:
+Line 115:     command: pnpm run build
+Line 116:     commandOrigin: ui
+Line 117:     publish: /opt/build/repo/artifacts/holiday-let/dist
+Line 118:     publishOrigin: ui
+Line 119: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 120: Failing build: Failed to build site
+Line 121: Finished processing build request in 24.988s
