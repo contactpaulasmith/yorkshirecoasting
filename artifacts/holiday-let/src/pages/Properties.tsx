@@ -55,7 +55,7 @@ export default function Properties() {
                       className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium shadow-sm">
-                      £{property.pricePerNight} <span className="text-muted-foreground font-normal text-xs">/night</span>
+                      from £{property.pricePerNight} <span className="text-muted-foreground font-normal text-xs">/night</span>
                     </div>
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">

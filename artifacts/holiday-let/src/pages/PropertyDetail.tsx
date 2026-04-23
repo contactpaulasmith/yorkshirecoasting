@@ -69,7 +69,7 @@ export default function PropertyDetail() {
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right hidden md:block">
-                <div className="text-2xl font-serif text-foreground">£{property.pricePerNight}</div>
+                <div className="text-2xl font-serif text-foreground">from £{property.pricePerNight}</div>
                 <div className="text-sm text-muted-foreground">per night</div>
               </div>
               <Button 
@@ -210,7 +210,7 @@ export default function PropertyDetail() {
             <div className="bg-card border border-border p-6 rounded-2xl shadow-sm sticky top-28">
               <div className="flex justify-between items-end mb-6">
                 <div>
-                  <span className="text-3xl font-serif text-foreground">£{property.pricePerNight}</span>
+                  <span className="text-3xl font-serif text-foreground">from £{property.pricePerNight}</span>
                   <span className="text-muted-foreground text-sm ml-1">/ night</span>
                 </div>
               </div>

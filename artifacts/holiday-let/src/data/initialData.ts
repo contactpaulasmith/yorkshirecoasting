@@ -45,7 +45,7 @@ export const initialProperties: Property[] = [
     sleeps: 6,
     bedrooms: 3,
     bathrooms: 2,
-    pricePerNight: 195,
+    pricePerNight: 100,
     airbnbLink: "https://www.airbnb.co.uk/rooms/701988237544422493",
     benefits: ["10 mins walk to North Bay", "Private courtyard & deck", "Moments from Peasholm Park", "Self check-in (lockbox)", "30 mins to North York Moors", "Free on-street parking", "Smart TVs with Netflix", "Sleeps 6 in five-star comfort"],
     faqs: [
@@ -78,7 +78,7 @@ export const initialProperties: Property[] = [
     sleeps: 4,
     bedrooms: 2,
     bathrooms: 1,
-    pricePerNight: 150,
+    pricePerNight: 60,
     airbnbLink: "https://www.airbnb.co.uk/rooms/1880508",
     benefits: ["Walk to South Bay beach & town centre", "Private gardens & decking", "Enclosed patio", "Self check-in (lockbox)", "Free on-street parking", "Washing machine & tumble dryer", "Travel cot & high chair available", "5-star TripAdvisor rating"],
     faqs: [
