@@ -1,0 +1,109 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis
+
+- Relevant log lines:
+  - The TypeScript error is shown at [line 84](#L84).
+  - The build failed because the typecheck step returned a non-zero exit at [line 82](#L82) and the package run failed at [lines 86–88](#L86-L88).
+- The concrete error: a TypeScript compile error in artifacts/holiday-let/src/pages/PropertyDetail.tsx reported as "'property' is possibly ..." at (155,91) ([log line 84](#L84)). This is a strict TypeScript null/undefined safety error — code is accessing property when TypeScript thinks it might be undefined (object possibly 'undefined' or 'null'), causing tsc to fail and the build to stop.
+- File reference (open the file in the repo): https://github.com/contactpaulasmith/yorkshirecoasting/blob/main/artifacts/holiday-let/src/pages/PropertyDetail.tsx#L155
+
+Solution
+
+1) Inspect the code around line 155 in artifacts/holiday-let/src/pages/PropertyDetail.tsx and decide how to handle a possibly undefined value for property:
+   - Verify the file is committed to the repo (it is, see link above). No external config change is required.
+
+2) Fix options (pick one appropriate for your app logic):
+
+   Option A — runtime guard (recommended if property can be absent at runtime):
+   - Return a fallback while property is not present:
+```tsx
+// TypeScript / JSX
+if (!property) {
+  return <div>Loading...</div>; // or appropriate UI
+}
+// safe to access property.* below
+```
+
+   Option B — optional chaining (safe access that yields undefined instead of throwing):
+```tsx
+// e.g. show name if present
+<span>{property?.name ?? 'No name'}</span>
+```
+
+   Option C — assert non-null when you are certain property is always defined at this point (use sparingly):
+```tsx
+// Use only if you're absolutely sure property is not undefined
+const name = property!.name;
+```
+
+   Option D — tighten the types so property cannot be undefined (change the function/prop type to exclude undefined). Example: change signature from property?: Property | undefined to property: Property.
+
+3) After making the change:
+   - Commit and push the change.
+   - Run the typecheck/build locally to verify the fix:
+     - Run the workspace typecheck as Netlify did (from repo root): pnpm run typecheck:libs
+     - Or run the holiday-let package tsc directly:
+       cd artifacts/holiday-let
+       pnpm run typecheck
+     - Then run pnpm run build (root) or the same command Netlify uses.
+
+4) Re-deploy on Netlify. The TypeScript error should be resolved and the build should proceed.
+
+If you want, paste the snippet around line 150–160 of PropertyDetail.tsx and I can suggest the exact patch to apply.
+
+The relevant error logs are:
+
+Line 0: build-image version: ac6eb13fbf000e5c09ad677efd8b7c3c2d0142b6 (noble-new-builds)
+Line 1: buildbot version: 2f607cea361d04414b42606ef78a12bf932318b7
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/contactpaulasmith/yorkshirecoasting
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Installing dependencies
+Line 9: mise ~/.config/mise/config.toml tools: python@3.14.3
+Line 10: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+Line 11: mise ~/.config/mise/config.toml tools: go@1.26.2
+Line 12: v22.22.2 is already installed.
+Line 13: Now using node v22.22.2 (npm v10.9.7)
+Line 72: > pnpm run typecheck:libs && pnpm -r --filter "./artifacts/**" --filter "./scripts" --if-present run typecheck
+Line 73: > workspace@0.0.0 typecheck:libs /opt/build/repo
+Line 74: > tsc --build
+Line 75: Scope: 4 of 9 workspace projects
+Line 76: artifacts/api-server typecheck$ tsc -p tsconfig.json --noEmit
+Line 77: artifacts/mockup-sandbox typecheck$ tsc -p tsconfig.json --noEmit
+Line 78: artifacts/holiday-let typecheck$ tsc -p tsconfig.json --noEmit
+Line 79: artifacts/api-server typecheck: Done
+Line 80: scripts typecheck$ tsc -p tsconfig.json --noEmit
+Line 81: scripts typecheck: Done
+Line 82: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 83: artifacts/mockup-sandbox typecheck: Done
+Line 84: artifacts/holiday-let typecheck: src/pages/PropertyDetail.tsx(155,91): error TS18048: 'property' is possibly
+Line 85: artifacts/holiday-let typecheck: Failed
+Line 86: /opt/build/repo/artifacts/holiday-let:
+Line 87:  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/holiday-let@0.0.0 typecheck: `tsc -p tsconfig.json --noE
+Line 88: Exit status 2
+Line 89:  ELIFECYCLE  Command failed with exit code 2.
+Line 90:  ELIFECYCLE  Command failed with exit code 2.
+Line 91: ​
+Line 92: "build.command" failed                                        
+Line 93: ────────────────────────────────────────────────────────────────
+Line 94: ​
+Line 95:   Error message
+Line 96:   Command failed with exit code 2: pnpm run build
+Line 97: ​
+Line 98:   Error location
+Line 99:   In Build command from Netlify app:
+Line 100:   pnpm run build
+Line 101: ​
+Line 102:   Resolved config
+Line 103:   build:
+Line 104:     command: pnpm run build
+Line 105:     commandOrigin: ui
+Line 106:     publish: /opt/build/repo/artifacts/holiday-let/dist
+Line 107:     publishOrigin: ui
+Line 108: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 109: Failing build: Failed to build site
+Line 110: Finished processing build request in 24.68s
