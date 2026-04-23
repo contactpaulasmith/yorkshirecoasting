@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "wouter";
+import { useLocation, useParams, Link } from "wouter";
 import Layout from "@/components/layout/Layout";
 import { useAppContext } from "@/context/AppContext";
 import { Button } from "@/components/ui/button";
@@ -222,7 +222,11 @@ export default function PropertyDetail() {
                 Check Availability <ExternalLink size={16} className="ml-2" />
               </Button>
               <p className="text-center text-xs text-muted-foreground">
-                You will be redirected to Airbnb to complete your booking securely.
+                You will be redirected to Airbnb to complete your booking securely or{" "}
+                <Link href="/contact" className="underline hover:text-foreground transition-colors">
+                  contact us
+                </Link>{" "}
+                directly to book.
               </p>
             </div>
 
