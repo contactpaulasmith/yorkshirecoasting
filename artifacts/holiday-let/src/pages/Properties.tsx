@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
-import { MapPin, Users, Bed, Bath } from "lucide-react";
+import { MapPin, Users, Bed, Bath, Star } from "lucide-react";
 
 export default function Properties() {
   const { properties } = useAppContext();
@@ -65,10 +65,27 @@ export default function Properties() {
                     <h2 className="font-serif text-2xl font-medium mb-3 text-foreground group-hover:text-primary transition-colors">
                       {property.name}
                     </h2>
-                    <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-grow">
+                    <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-grow">
                       {property.description}
                     </p>
-                    
+
+                    <a
+                      href={property.reviewsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 mb-5 w-fit group/stars"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} className="fill-accent text-accent" />
+                        ))}
+                      </div>
+                      <span className="text-xs font-medium text-muted-foreground underline underline-offset-2 group-hover/stars:text-foreground transition-colors">
+                        Reviews
+                      </span>
+                    </a>
+
                     <div className="flex items-center justify-between border-t border-border pt-4 mt-auto">
                       <div className="flex gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center" title="Sleeps"><Users size={16} className="mr-1.5 opacity-70"/> {property.sleeps}</div>
