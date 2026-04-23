@@ -64,7 +64,19 @@ export default function PropertyDetail() {
               </motion.h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center"><MapPin size={16} className="mr-1.5" /> {property.location}</span>
-                <span className="flex items-center"><Star size={16} className="mr-1.5 text-accent fill-accent" /> {averageRating} ({propertyReviews.length} reviews)</span>
+                <a
+                  href={property.reviewsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 group/stars"
+                >
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="fill-accent text-accent" />
+                    ))}
+                  </div>
+                  <span className="underline underline-offset-2 group-hover/stars:text-foreground transition-colors">Reviews</span>
+                </a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -230,8 +242,8 @@ export default function PropertyDetail() {
               </p>
             </div>
 
-            {/* Reviews */}
-            <div>
+            {/* Reviews — hidden, re-enable by changing false to true */}
+            {false && <div>
               <h3 className="text-xl font-serif text-primary mb-6 flex items-center">
                 <Star className="mr-2 fill-accent text-accent" size={20} />
                 <a href={property.reviewsLink} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
@@ -260,7 +272,7 @@ export default function PropertyDetail() {
               ) : (
                 <p className="text-sm text-muted-foreground">No reviews yet for this property.</p>
               )}
-            </div>
+            </div>}
 
             {/* FAQs */}
             <div>
