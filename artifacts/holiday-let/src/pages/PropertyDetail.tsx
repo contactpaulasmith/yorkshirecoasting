@@ -233,7 +233,10 @@ export default function PropertyDetail() {
             {/* Reviews */}
             <div>
               <h3 className="text-xl font-serif text-primary mb-6 flex items-center">
-                <Star className="mr-2 fill-accent text-accent" size={20} /> Guest Reviews
+                <Star className="mr-2 fill-accent text-accent" size={20} />
+                <a href={property.reviewsLink} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Guest Reviews
+                </a>
               </h3>
               {propertyReviews.length > 0 ? (
                 <div className="space-y-6">

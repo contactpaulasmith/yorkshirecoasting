@@ -9,6 +9,7 @@ export interface Property {
   bathrooms: number;
   pricePerNight: number;
   airbnbLink: string;
+  reviewsLink: string;
   benefits: string[];
   faqs: { question: string; answer: string }[];
   images: string[];
@@ -47,6 +48,7 @@ export const initialProperties: Property[] = [
     bathrooms: 2,
     pricePerNight: 100,
     airbnbLink: "https://www.airbnb.co.uk/rooms/701988237544422493",
+    reviewsLink: "https://www.airbnb.co.uk/rooms/701988237544422493/reviews?source_impression_id=p3_1776448407_P3wS8CJr78EuQQp4",
     benefits: ["10 mins walk to North Bay", "Private courtyard & deck", "Moments from Peasholm Park", "Self check-in (lockbox)", "30 mins to North York Moors", "Free on-street parking", "Smart TVs with Netflix", "Sleeps 6 in five-star comfort"],
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
@@ -79,6 +81,7 @@ export const initialProperties: Property[] = [
     bathrooms: 1,
     pricePerNight: 60,
     airbnbLink: "https://www.airbnb.co.uk/rooms/1880508",
+    reviewsLink: "https://www.airbnb.co.uk/rooms/1880508/reviews",
     benefits: ["Walk to South Bay beach & town centre", "Private gardens & decking", "Enclosed patio", "Self check-in (lockbox)", "Free on-street parking", "Washing machine & tumble dryer", "Travel cot & high chair available", "5-star TripAdvisor rating"],
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
