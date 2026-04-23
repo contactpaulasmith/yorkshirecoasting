@@ -14,7 +14,7 @@ export default function AdminLogin() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "admin2024") {
+    if (password === "Lulud0g1!") {
       localStorage.setItem("admin_auth", "true");
       setLocation("/admin");
     } else {
