@@ -51,7 +51,6 @@ export const initialProperties: Property[] = [
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
-      { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
       { question: "North Bay beach", answer: "A 10-minute walk through Peasholm Park brings you straight to North Bay beach." },
       { question: "Fold-out bed / Cot", answer: "A fold-out bed and Portable Cot is available on request to accommodate an extra guest / child." }
@@ -84,7 +83,6 @@ export const initialProperties: Property[] = [
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
-      { question: "Pets", answer: "Please check the Airbnb listing for the current pet policy." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
       { question: "Fold-out bed / Cot", answer: "A fold-out bed and Portable Cot is available on request to accommodate an extra guest / child." }
     ],
