@@ -49,7 +49,9 @@ export default function Footer() {
               <li>contactus@yorkshirecoasting.co.uk</li>
               <li>+44 (0) 7715 417 923</li>
               <li className="pt-2">
-                Mark &amp; Paula Smith (Owners)
+                <Link href="/contact" className="hover:text-foreground transition-colors">
+                  Mark &amp; Paula Smith (Owners)
+                </Link>
               </li>
             </ul>
           </div>
