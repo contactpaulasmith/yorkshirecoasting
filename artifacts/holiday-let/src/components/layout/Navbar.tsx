@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/logo_rectangular_1777111610294.png";
+import logo from "@assets/Logo_YC_1777112098883.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
-            <img src={logo} alt="YorkshireCoasting" className="h-[73px] w-auto" />
+            <img src={logo} alt="YorkshireCoasting" className="h-[84px] w-auto" />
           </Link>
 
           {/* Desktop Nav */}
