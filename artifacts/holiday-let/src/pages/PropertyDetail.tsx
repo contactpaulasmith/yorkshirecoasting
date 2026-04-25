@@ -39,7 +39,7 @@ export default function PropertyDetail() {
     : "New";
 
   const propertyThingsToDo = thingsToDo.filter(t => t.propertyIds.length === 0 || t.propertyIds.includes(property.id));
-  const categories = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping"];
+  const categories = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children"];
 
   return (
     <Layout>
@@ -246,7 +246,7 @@ export default function PropertyDetail() {
             {false && <div>
               <h3 className="text-xl font-serif text-primary mb-6 flex items-center">
                 <Star className="mr-2 fill-accent text-accent" size={20} />
-                <a href={property.reviewsLink} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                <a href={property?.reviewsLink} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
                   Guest Reviews
                 </a>
               </h3>
