@@ -15,6 +15,7 @@ import AdminLogin from "@/pages/admin/AdminLogin";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminProperties from "@/pages/admin/AdminProperties";
 import AdminThingsToDo from "@/pages/admin/AdminThingsToDo";
+import AdminThingsToDoPreview from "@/pages/admin/AdminThingsToDoPreview";
 import AdminReviews from "@/pages/admin/AdminReviews";
 
 function Router() {
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/admin" component={AdminDashboard} />
       <Route path="/admin/properties" component={AdminProperties} />
       <Route path="/admin/things-to-do" component={AdminThingsToDo} />
+      <Route path="/admin/things-to-do/preview" component={AdminThingsToDoPreview} />
       <Route path="/admin/reviews" component={AdminReviews} />
       
       <Route component={NotFound} />

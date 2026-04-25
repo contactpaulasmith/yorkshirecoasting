@@ -10,7 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Edit2, Trash2, ExternalLink } from "lucide-react";
+import { Plus, Edit2, Trash2, ExternalLink, Eye } from "lucide-react";
+import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
 
 export default function AdminThingsToDo() {
@@ -64,10 +65,14 @@ export default function AdminThingsToDo() {
           <h1 className="text-3xl font-serif text-foreground">Things To Do</h1>
           <p className="text-muted-foreground mt-1">Manage the local area guide across all properties.</p>
         </div>
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogTrigger asChild>
-            <Button onClick={handleCreate}><Plus size={16} className="mr-2" /> Add Item</Button>
-          </DialogTrigger>
+        <div className="flex items-center gap-2">
+          <Link href="/admin/things-to-do/preview">
+            <Button variant="outline"><Eye size={16} className="mr-2" /> Preview</Button>
+          </Link>
+          <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <DialogTrigger asChild>
+              <Button onClick={handleCreate}><Plus size={16} className="mr-2" /> Add Item</Button>
+            </DialogTrigger>
           <DialogContent className="max-w-xl">
             <DialogHeader>
               <DialogTitle>{editingThing ? "Edit Local Guide Item" : "Add Local Guide Item"}</DialogTitle>
@@ -90,6 +95,7 @@ export default function AdminThingsToDo() {
                       <SelectItem value="Beaches">Beaches</SelectItem>
                       <SelectItem value="Attractions">Attractions</SelectItem>
                       <SelectItem value="Shopping">Shopping</SelectItem>
+                      <SelectItem value="Children">Children</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -150,6 +156,7 @@ export default function AdminThingsToDo() {
             </form>
           </DialogContent>
         </Dialog>
+        </div>
       </div>
 
       <div className="bg-card border border-border rounded-xl shadow-sm overflow-hidden">
