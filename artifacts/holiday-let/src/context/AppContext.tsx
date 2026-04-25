@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { Property, ThingToDo, Review, initialProperties, initialThingsToDo, initialReviews } from "../data/initialData";
 
-const DATA_VERSION = "v28";
+const DATA_VERSION = "v29";
 
 function loadAdminState<T>(key: string, fallback: T): T {
   try {
