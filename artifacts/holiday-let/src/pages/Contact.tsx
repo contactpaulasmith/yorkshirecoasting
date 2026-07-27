@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Instagram, Facebook, CheckCircle2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const FORMSPREE_URL = import.meta.env.VITE_FORMSPREE_URL as string | undefined;
+
 export default function Contact() {
   const { properties } = useAppContext();
   const { toast } = useToast();
@@ -24,31 +26,31 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!FORMSPREE_URL) {
+      toast({ title: "Configuration error", description: "Form endpoint not set up yet.", variant: "destructive" });
+      return;
+    }
+
     const propertyLabel = property === "general" || !property
       ? "General Enquiry"
       : properties.find(p => p.id === property)?.name ?? property;
 
     setIsLoading(true);
     try {
-      const body = new URLSearchParams({
-        "form-name": "contact",
-        name,
-        email,
-        phone: phone || "Not provided",
-        property: propertyLabel,
-        message,
-      }).toString();
-
-      const res = await fetch("/", {
+      const res = await fetch(FORMSPREE_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "Accept": "application/json",
-        },
-        body,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: phone || "Not provided",
+          property: propertyLabel,
+          message,
+          _subject: `YorkshireCoasting Enquiry from ${name}`,
+        }),
       });
 
-      if (!res.ok) throw new Error(`Submission failed: ${res.status}`);
+      if (!res.ok) throw new Error("Submission failed");
 
       setIsSubmitted(true);
       toast({ title: "Message sent!", description: "We'll get back to you as soon as possible." });
@@ -179,8 +181,7 @@ export default function Contact() {
                   <Button variant="outline" onClick={() => setIsSubmitted(false)}>Send another message</Button>
                 </div>
               ) : (
-                <form name="contact" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-6">
-                  <input type="hidden" name="form-name" value="contact" />
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <h2 className="text-2xl font-serif text-primary mb-6">Send an Enquiry.</h2>
                   
                   <div className="space-y-4">
