@@ -26,8 +26,8 @@ export default function Home() {
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <img 
-          src="https://picsum.photos/id/16/1920/1080" 
-          alt="Beautiful North Yorkshire coastline on a sunny day" 
+          src="/images/hero.jpg" 
+          alt="Scarborough South Bay at sunset, looking towards the castle headland" 
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
