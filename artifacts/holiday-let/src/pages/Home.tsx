@@ -74,7 +74,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">Give yourself a break.</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The bed linen is pressed, the wine glasses polished and the cushions plumped. All that's left to do is sit back and unwind, knowing every little detail has been considered. It's more than holidaying. It's Yorkshire Coasting.
+              The bed linen is pressed, the wine glasses polished and the cushions plumped. All that's left to do is sit back and unwind in perfect comfort, knowing every little detail has been considered. It's more than holidaying. It's Yorkshire Coasting.
             </p>
           </motion.div>
         </div>
