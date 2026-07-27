@@ -27,7 +27,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30 z-10" />
         <img 
           src="/images/hero.jpg" 
-          alt="Scarborough seafront at sunset with waves crashing against the promenade" 
+          alt="Wide sandy beach on the North Yorkshire coast with rolling waves and clear blue skies" 
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
