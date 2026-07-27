@@ -86,7 +86,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-12">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
               <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">Our collection.</h2>
-              <p className="text-muted-foreground">Beautiful homes. Perfect locations.</p>
+              <p className="text-muted-foreground">We've got the north and south bays covered with two beautiful homes in perfect locations.</p>
             </motion.div>
             <Link href="/properties" className="hidden md:flex items-center text-primary font-medium hover:text-primary/80 transition-colors">
               View all <ArrowRight size={16} className="ml-2" />
