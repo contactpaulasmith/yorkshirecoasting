@@ -37,7 +37,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-6 drop-shadow-lg leading-tight"
           >
-            Your home from home in Scarborough
+            Your home from home in Scarborough.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -85,7 +85,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-              <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">Our Collection</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">Our Collection.</h2>
               <p className="text-muted-foreground">Exceptional homes in extraordinary locations.</p>
             </motion.div>
             <Link href="/properties" className="hidden md:flex items-center text-primary font-medium hover:text-primary/80 transition-colors">

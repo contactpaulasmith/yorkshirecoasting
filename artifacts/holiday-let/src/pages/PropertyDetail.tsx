@@ -140,7 +140,7 @@ export default function PropertyDetail() {
                 <div className="flex items-center gap-3"><Bath className="text-primary/70" size={24} /> <div><div className="font-medium">Bathrooms</div><div className="text-sm text-muted-foreground">{property.bathrooms}</div></div></div>
               </div>
               
-              <h2 className="text-2xl font-serif text-primary mb-4">About this home</h2>
+              <h2 className="text-2xl font-serif text-primary mb-4">About this home.</h2>
               <div className="prose prose-stone max-w-none text-muted-foreground leading-relaxed">
                 <p>{property.description}</p>
               </div>
@@ -148,7 +148,7 @@ export default function PropertyDetail() {
 
             {/* Amenities / Benefits */}
             <section>
-              <h2 className="text-2xl font-serif text-primary mb-6">Home highlights</h2>
+              <h2 className="text-2xl font-serif text-primary mb-6">Home highlights.</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {property.benefits.map((benefit, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-foreground">
@@ -163,7 +163,7 @@ export default function PropertyDetail() {
 
             {/* Things To Do — hidden for now, re-enable by changing false to true */}
             {false && <section>
-              <h2 className="text-2xl font-serif text-primary mb-2">Local Area</h2>
+              <h2 className="text-2xl font-serif text-primary mb-2">Local Area.</h2>
               <p className="text-muted-foreground mb-8">Our curated guide to the best of {property?.location.split(',')[0]} and beyond.</p>
               
               <Tabs defaultValue="All" className="w-full">

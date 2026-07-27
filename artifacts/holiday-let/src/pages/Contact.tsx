@@ -94,7 +94,7 @@ export default function Contact() {
             className="space-y-10"
           >
             <div>
-              <h2 className="text-2xl font-serif text-primary mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-serif text-primary mb-6">Contact Information.</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 We aim to respond to all enquiries within 24 hours. For urgent booking matters, please call us directly.
               </p>
@@ -173,7 +173,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <h2 className="text-2xl font-serif text-primary mb-6">Send an Enquiry</h2>
+                  <h2 className="text-2xl font-serif text-primary mb-6">Send an Enquiry.</h2>
                   
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
