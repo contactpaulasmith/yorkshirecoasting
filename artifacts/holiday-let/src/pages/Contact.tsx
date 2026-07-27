@@ -78,7 +78,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-lg text-primary-foreground/75 max-w-2xl mx-auto"
           >
-            Whether you have a question about a specific property or need help planning your stay, we're here to help.
+            We want you to enjoy the perfect coastal getaway. So if you have a question about our properties, or need some inspiration to plan your stay, we're here to help.
           </motion.p>
         </div>
       </div>
@@ -95,9 +95,6 @@ export default function Contact() {
           >
             <div>
               <h2 className="text-2xl font-serif text-primary mb-6">Contact Information.</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                We want you to enjoy the perfect coastal getaway. So if you have a question about our properties, or need some inspiration to plan your stay, we're here to help.
-              </p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
