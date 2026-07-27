@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Instagram, Facebook, CheckCircle2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const FORMSPREE_URL = import.meta.env.VITE_FORMSPREE_URL as string | undefined;
+const FORMSPREE_URL = "https://formspree.io/f/mnjldbdb";
 
 export default function Contact() {
   const { properties } = useAppContext();
