@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Mail, Facebook } from "lucide-react";
 
 function TikTokIcon({ size = 20 }: { size?: number }) {
   return (
@@ -22,6 +22,9 @@ export default function Footer() {
               A collection of luxury holiday homes on the North Yorkshire coast. <strong>Book direct</strong> for the best rates on 07715 417 923 / 07715 297 791.
             </p>
             <div className="flex gap-4">
+              <a href="https://www.facebook.com/TheSteepleCottage" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Facebook size={20} />
+              </a>
               <a href="https://www.instagram.com/scarboroughholidays/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
