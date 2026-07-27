@@ -35,7 +35,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-6 drop-shadow-lg leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-serif font-medium mb-6 drop-shadow-lg leading-tight"
           >
             Your home from home in Scarborough.
           </motion.h1>
