@@ -96,7 +96,7 @@ export default function Contact() {
             <div>
               <h2 className="text-2xl font-serif text-primary mb-6">Contact Information.</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                We aim to respond to all enquiries within 24 hours. For urgent booking matters, please call us directly.
+                We want you to enjoy the perfect coastal getaway. So if you have a question about our properties, or need some inspiration to plan your stay, we're here to help.
               </p>
               
               <div className="space-y-6">
