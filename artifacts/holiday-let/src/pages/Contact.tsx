@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
-import { Mail, Phone, Instagram, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, CheckCircle2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const FORMSPREE_URL = import.meta.env.VITE_FORMSPREE_URL as string | undefined;
@@ -117,6 +117,18 @@ export default function Contact() {
                     <h3 className="font-medium mb-1">Phone</h3>
                     <a href="tel:+447715417923" className="text-muted-foreground hover:text-primary transition-colors">
                       +44 (0) 7715 417 923
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-primary/10 p-3 rounded-full mr-4 text-primary">
+                    <Facebook size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-1">Facebook</h3>
+                    <a href="https://www.facebook.com/TheSteepleCottage" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      YorkshireCoasting
                     </a>
                   </div>
                 </div>
