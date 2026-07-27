@@ -42,7 +42,7 @@ export const initialProperties: Property[] = [
     slug: "the-courtyard",
     name: "The Courtyard",
     location: "Scarborough, North Yorkshire",
-    description: "Stunning open-plan living that flows out onto a private courtyard — moments from Peasholm Park and North Bay beach. Two double bedrooms and bathroom on the first floor, plus an additional master bedroom and en-suite in the dormer suite. Appointed to the highest standards with oak furniture, plush king sleigh beds and smart TVs with Netflix. Five-star comfort close to Scarborough's best attractions.",
+    description: "Discover stunning open-plan living that flows out onto a private courtyard — moments from Peasholm Park and North Bay beach. Two double bedrooms and bathroom on the first floor, plus an additional master bedroom and en-suite in the dormer suite. Appointed to the highest standards with oak furniture, plush king sleigh beds and smart TVs with Netflix. Five-star comfort close to Scarborough's best attractions.",
     sleeps: 6,
     bedrooms: 3,
     bathrooms: 2,
