@@ -24,7 +24,7 @@ export default function Properties() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-serif text-primary-foreground mb-6"
           >
-            Our Properties
+            Our properties.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ export default function Properties() {
             transition={{ delay: 0.2 }}
             className="text-lg text-primary-foreground/75 max-w-2xl mx-auto"
           >
-            Discover our premium coastal properties on the North Yorkshire coast, ready to welcome you.
+            Whether you're travelling solo, as a couple, a family or group, we've got you covered with the finest holiday homes Scarborough has to offer.
           </motion.p>
         </div>
       </div>
