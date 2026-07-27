@@ -45,7 +45,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-xl font-light mb-10 text-white/90 max-w-2xl mx-auto drop-shadow-md"
           >
-            A curated collection of premium holiday homes on the North Yorkshire coast. Clifftops, harbours, and wide open skies.
+            Book direct for the best rates on luxury holiday accommodation on the Yorkshire Coast.
           </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
