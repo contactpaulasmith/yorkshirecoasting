@@ -41,11 +41,14 @@ export default function Contact() {
 
       const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "application/json",
+        },
         body,
       });
 
-      if (!res.ok) throw new Error("Submission failed");
+      if (!res.ok) throw new Error(`Submission failed: ${res.status}`);
 
       setIsSubmitted(true);
       toast({ title: "Message sent!", description: "We'll get back to you as soon as possible." });
