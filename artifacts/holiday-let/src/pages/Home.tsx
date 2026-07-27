@@ -72,12 +72,9 @@ export default function Home() {
       <section className="py-24 bg-background">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
-            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">More than just a place to stay</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">Give yourself a break.</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We believe a holiday should start the moment you walk through the door. 
-              Crisp linen, the scent of the sea, a kitchen ready for a feast, and the quiet assurance 
-              that every detail has been considered. We are a boutique property manager dedicated to 
-              curating extraordinary coastal retreats.
+              The fresh bed linen is pressed, the wine glasses polished and the cushions plumped. All that's left to do is sit back and unwind, knowing every detail has been considered. It's more than holidaying. It's Yorkshire Coasting.
             </p>
           </motion.div>
         </div>
