@@ -37,7 +37,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-6 drop-shadow-lg leading-tight"
           >
-            Find your calm by the coast
+            Your home from home in Scarborough
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
