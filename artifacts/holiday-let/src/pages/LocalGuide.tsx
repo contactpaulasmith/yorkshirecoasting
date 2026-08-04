@@ -17,7 +17,8 @@ export default function LocalGuide() {
     window.scrollTo(0, 0);
   }, []);
 
-  const filtered = thingsToDo.filter(t => activeCategory === "All" || t.category === activeCategory);
+  const published = thingsToDo.filter(t => t.published !== false);
+  const filtered = published.filter(t => activeCategory === "All" || t.category === activeCategory);
 
   return (
     <Layout>
@@ -48,7 +49,7 @@ export default function LocalGuide() {
         {/* Category filter */}
         <div className="flex flex-wrap gap-2 mb-10">
           {CATEGORIES.map(cat => {
-            const count = cat === "All" ? thingsToDo.length : thingsToDo.filter(t => t.category === cat).length;
+            const count = cat === "All" ? published.length : published.filter(t => t.category === cat).length;
             if (count === 0) return null;
             return (
               <button

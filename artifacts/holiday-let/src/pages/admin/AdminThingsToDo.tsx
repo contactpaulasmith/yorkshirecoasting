@@ -152,7 +152,16 @@ export default function AdminThingsToDo() {
                 </div>
               </div>
 
-              <div className="flex justify-end pt-4 border-t border-border">
+              <div className="flex items-center justify-between pt-4 border-t border-border">
+                <label className="flex items-center gap-2 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={formData.published !== false}
+                    onChange={e => setFormData({...formData, published: e.target.checked})}
+                    className="w-4 h-4 accent-primary"
+                  />
+                  <span className="text-sm font-medium">Published (visible on site)</span>
+                </label>
                 <Button type="submit">Save Item</Button>
               </div>
             </form>
@@ -176,10 +185,15 @@ export default function AdminThingsToDo() {
             {thingsToDo.map(item => (
               <TableRow key={item.id}>
                 <TableCell className="font-medium">
-                  {item.title}
-                  <a href={item.link} target="_blank" rel="noreferrer" className="inline-block ml-2 text-muted-foreground hover:text-primary">
-                    <ExternalLink size={12} />
-                  </a>
+                  <span className="flex items-center gap-2">
+                    {item.title}
+                    {item.published === false && (
+                      <Badge variant="outline" className="text-[10px] uppercase tracking-wider text-muted-foreground border-muted-foreground/40">Draft</Badge>
+                    )}
+                    <a href={item.link} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">
+                      <ExternalLink size={12} />
+                    </a>
+                  </span>
                 </TableCell>
                 <TableCell>
                   <Badge variant="secondary" className="text-[10px] font-normal tracking-wide uppercase">
