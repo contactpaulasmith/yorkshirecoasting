@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
-const CATEGORIES = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children", "Transport"];
+const CATEGORIES = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children", "Transport", "Walks"];
 
 export default function LocalGuide() {
   const { thingsToDo } = useAppContext();

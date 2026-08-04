@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
-const CATEGORIES = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children", "Transport"];
+const CATEGORIES = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children", "Transport", "Walks"];
 
 export default function AdminThingsToDoPreview() {
   const { thingsToDo } = useAppContext();

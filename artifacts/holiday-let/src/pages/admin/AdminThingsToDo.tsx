@@ -97,6 +97,7 @@ export default function AdminThingsToDo() {
                       <SelectItem value="Shopping">Shopping</SelectItem>
                       <SelectItem value="Children">Children</SelectItem>
                       <SelectItem value="Transport">Transport</SelectItem>
+                      <SelectItem value="Walks">Walks</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
