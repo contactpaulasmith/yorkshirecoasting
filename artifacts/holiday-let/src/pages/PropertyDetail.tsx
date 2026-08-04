@@ -39,7 +39,7 @@ export default function PropertyDetail() {
     : "New";
 
   const propertyThingsToDo = thingsToDo.filter(t => t.propertyIds.length === 0 || t.propertyIds.includes(property.id));
-  const categories = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children"];
+  const categories = ["All", "Food & Drink", "Beaches", "Attractions", "Shopping", "Children", "Transport"];
 
   return (
     <Layout>
