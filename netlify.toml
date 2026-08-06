@@ -1,9 +1,6 @@
 [build]
-  command = "npm install -g pnpm && pnpm install && pnpm --filter @workspace/holiday-let run build"
+  command = "pnpm --filter @workspace/holiday-let run build"
   publish = "artifacts/holiday-let/dist/public"
-
-[build.environment]
-  NODE_VERSION = "20"
 
 [[redirects]]
   from = "/*"
