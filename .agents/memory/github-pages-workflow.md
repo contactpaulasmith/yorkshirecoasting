@@ -1,17 +1,29 @@
 ---
-name: GitHub Pages publish workflow
-description: How the Yorkshire Coasting site is deployed — built locally then pushed to the gh-pages branch, served by GitHub Pages.
+name: Netlify + GitHub publish workflow
+description: www.yorkshirecoasting.co.uk is hosted on Netlify, connected to the GitHub repo contactpaulasmith/yorkshirecoasting. Pushing to main triggers a Netlify build and deploy automatically.
 ---
 
 ## Rule
-After every source change, publish with these steps:
-1. `BASE_PATH=/yorkshirecoasting/ NODE_ENV=production pnpm --filter @workspace/holiday-let run build`
-2. Switch to gh-pages branch: `git checkout gh-pages` (orphan branch — only built files)
-3. Copy dist to root: `cp -r artifacts/holiday-let/dist/public/. .`
-4. Force-add and commit: `git add -f index.html assets/ favicon.png favicon.svg opengraph.jpg images/ architecture.html 404.html && git commit -m "Deploy"`
-5. Push: `git push ... gh-pages --force`
-6. Switch back to main: `git checkout -f main`
+Publishing = pushing source changes to the `main` branch on GitHub. Netlify is connected to the repo and auto-builds on every push using the command in `netlify.toml`.
 
-**Why:** The site uses GitHub Pages served from the `gh-pages` branch root. The GitHub PAT does not have `workflow` scope so GitHub Actions cannot be used. BASE_PATH must be `/yorkshirecoasting/` to match the GitHub Pages subpath. The wouter router reads `import.meta.env.BASE_URL` so it works automatically. A `404.html` in the branch handles SPA deep-link routing.
+**Do NOT:**
+- Commit built dist files to the repo (Netlify builds from source)
+- Remove the build command from netlify.toml
+- Set up GitHub Pages (the domain is served by Netlify, not GitHub Pages)
+- Create a gh-pages branch
 
-**How to apply:** Every time source changes are made and pushed to main, also run the build and push to gh-pages. The live site URL is https://contactpaulasmith.github.io/yorkshirecoasting/
+**netlify.toml must always contain:**
+```toml
+[build]
+  command = "pnpm --filter @workspace/holiday-let run build"
+  publish = "artifacts/holiday-let/dist/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+**Why:** The user's site at www.yorkshirecoasting.co.uk is served by Netlify, which is connected to the GitHub repo contactpaulasmith/yorkshirecoasting and builds automatically on push to main. The user refers to this as "publishing to GitHub."
+
+**How to apply:** After every source change, simply push to the main branch on GitHub. No build step needed locally.
