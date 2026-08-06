@@ -1,1 +1,1 @@
-- [GitHub Pages publish workflow](github-pages-workflow.md) — site publishes via gh-pages branch; build locally then force-push built files there.
+- [Deployment model](deployment-model.md) — every GitHub push triggers a paid Netlify build; NEVER push without explicit user instruction.
