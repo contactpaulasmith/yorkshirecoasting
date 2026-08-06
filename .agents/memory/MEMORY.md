@@ -1,0 +1,1 @@
+- [Netlify publish workflow](netlify-publish-workflow.md) — dist must be built locally and committed; Netlify serves pre-built files, no build command.
