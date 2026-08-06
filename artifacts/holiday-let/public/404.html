@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <script>
-    // GitHub Pages SPA redirect
-    // Stores the full path in sessionStorage and redirects to the base
-    var base = '/yorkshirecoasting';
-    var path = window.location.pathname.replace(base, '') || '/';
+    // GitHub Pages SPA redirect — custom domain at root
+    var path = window.location.pathname;
     var search = window.location.search;
     var hash = window.location.hash;
     sessionStorage.setItem('spa_redirect', path + search + hash);
-    window.location.replace(base + '/');
+    window.location.replace('/');
   </script>
 </head>
 <body></body>
