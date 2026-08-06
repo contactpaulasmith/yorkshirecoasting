@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yorkshire Coasting — Architecture Diagram</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #f8f7f4;
+    color: #1a1a1a;
+    padding: 40px 32px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 36px;
+  }
+
+  /* ── ZONE CONTAINERS ── */
+  .zone {
+    border: 1.5px solid #d4d0c8;
+    border-radius: 10px;
+    padding: 20px 22px 22px;
+    margin-bottom: 12px;
+    position: relative;
+    background: #fff;
+  }
+  .zone-label {
+    position: absolute;
+    top: -11px;
+    left: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .zone-dev   { border-color: #b8c9e4; background: #f5f8fd; }
+  .zone-dev .zone-label   { background: #3b6ea8; color: #fff; }
+  .zone-host  { border-color: #b8d9b8; background: #f5fdf5; }
+  .zone-host .zone-label  { background: #3a7a3a; color: #fff; }
+  .zone-visit { border-color: #e0d0b8; background: #fdf9f5; }
+  .zone-visit .zone-label { background: #8a5c20; color: #fff; }
+  .zone-ext   { border-color: #d8b8d8; background: #fdf5fd; }
+  .zone-ext .zone-label   { background: #7a3a7a; color: #fff; }
+
+  /* ── BOXES ── */
+  .row { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .row.center { align-items: center; }
+  .box {
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    min-width: 120px;
+    position: relative;
+  }
+  .box .box-title { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+  .box .box-sub   { font-size: 11px; color: #666; line-height: 1.4; }
+  .box .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-top: 4px;
+  }
+  .sup { font-size: 10px; vertical-align: super; color: #888; margin-left: 1px; }
+
+  /* colour themes per company */
+  .box-paula  { border-color: #3b6ea8; background: #eef3fb; }
+  .box-replit { border-color: #f26522; background: #fff4ef; }
+  .box-github { border-color: #24292f; background: #f6f8fa; }
+  .box-vite   { border-color: #a259f7; background: #f9f5ff; }
+  .box-react  { border-color: #61dafb; background: #f0fcff; }
+  .box-express{ border-color: #68a063; background: #f2faf2; }
+  .box-local  { border-color: #e8a020; background: #fff8ed; }
+  .box-formsp { border-color: #e84393; background: #fff0f7; }
+  .box-airbnb { border-color: #ff5a5f; background: #fff5f5; }
+  .box-ext    { border-color: #9c8abc; background: #f8f5ff; }
+  .box-visitor{ border-color: #888; background: #fafafa; }
+
+  /* ── ARROWS ── */
+  .arrow-col { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .arrow-right {
+    display: flex; align-items: center; align-self: center;
+    color: #888; font-size: 11px; white-space: nowrap; padding: 0 4px;
+  }
+  .arrow-right::after  { content: '→'; font-size: 18px; margin-left: 4px; color: #aaa; }
+  .arrow-down {
+    text-align: center; color: #888; font-size: 11px;
+    padding: 4px 0; line-height: 1.2;
+  }
+  .arrow-down::after { content: '↓'; display: block; font-size: 18px; color: #aaa; }
+
+  /* ── CONNECTOR BRIDGE (between zones) ── */
+  .bridge {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    padding: 4px 0;
+    position: relative;
+  }
+  .bridge::before, .bridge::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 1.5px;
+    background: #ccc;
+  }
+  .bridge::before { top: 0; height: 4px; }
+  .bridge::after  { bottom: 0; height: 4px; }
+
+  /* ── HORIZONTAL DIVIDER inside zone ── */
+  .divider { border: none; border-top: 1px dashed #ddd; margin: 14px 0; }
+
+  /* ── FOOTNOTES ── */
+  .footnotes {
+    margin-top: 32px;
+    border-top: 1.5px solid #ddd;
+    padding-top: 20px;
+  }
+  .footnotes h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 14px;
+  }
+  .fn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+  }
+  .fn {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.55;
+    display: flex;
+    gap: 6px;
+  }
+  .fn-num {
+    font-weight: 700;
+    color: #888;
+    min-width: 18px;
+    flex-shrink: 0;
+  }
+  .legend {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .leg-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; color: #555;
+  }
+  .leg-swatch {
+    width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid #ccc; flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Yorkshire Coasting — System Architecture</h1>
+<p class="subtitle">How the site is built, published, hosted, and how content &amp; forms are managed</p>
+
+<!-- ══════════════════════════════════════════
+     ZONE 1 — CONTENT MANAGEMENT / DEVELOPMENT
+     ══════════════════════════════════════════ -->
+<div class="zone zone-dev">
+  <span class="zone-label">Content Management &amp; Development</span>
+
+  <div class="row center" style="margin-top:8px;">
+
+    <div class="box box-paula">
+      <div class="box-title">Paula (Admin)<span class="sup">1</span></div>
+      <div class="box-sub">Manages content via<br>password-protected<br>Admin panel</div>
+    </div>
+
+    <div class="arrow-right">edits &amp; instructs</div>
+
+    <div class="box box-replit">
+      <div class="box-title">Replit Workspace<span class="sup">2</span></div>
+      <div class="box-sub">Cloud dev environment.<br>AI Agent applies code<br>changes to the repo.</div>
+      <span class="badge" style="background:#fff4ef;border:1px solid #f26522;color:#c04a00;">replit.com</span>
+    </div>
+
+    <div class="arrow-right">git push</div>
+
+    <div class="box box-github">
+      <div class="box-title">GitHub Repository<span class="sup">3</span></div>
+      <div class="box-sub">contactpaulasmith/<br>yorkshirecoasting<br>Source of truth for all code<br>&amp; site content (initialData.ts)</div>
+      <span class="badge" style="background:#f6f8fa;border:1px solid #24292f;color:#24292f;">github.com</span>
+    </div>
+
+  </div>
+
+  <div style="margin-top:10px; font-size:11px; color:#666; padding-left:4px;">
+    ℹ️ &nbsp;Admin panel changes (draft/publish, editing entries) are saved to the <strong>visitor's browser</strong> only — they are not written back to GitHub automatically. Permanent content changes require the Agent to update <code>initialData.ts</code> and push to GitHub.<span class="sup">4</span>
+  </div>
+</div>
+
+<div class="bridge">deploy triggered manually via Replit publish</div>
+
+<!-- ══════════════════════════════════════════
+     ZONE 2 — HOSTING
+     ══════════════════════════════════════════ -->
+<div class="zone zone-host">
+  <span class="zone-label">Hosting — Replit Autoscale<span class="sup">5</span></span>
+
+  <div class="row center" style="margin-top:8px;">
+
+    <div class="box box-vite" style="min-width:150px;">
+      <div class="box-title">Build Step<span class="sup">6</span></div>
+      <div class="box-sub">Vite compiles the React<br>app into optimised static<br>HTML / CSS / JS files</div>
+      <span class="badge" style="background:#f9f5ff;border:1px solid #a259f7;color:#6b2fa0;">pnpm + Vite</span>
+    </div>
+
+    <div class="arrow-right">outputs</div>
+
+    <div class="box box-react" style="min-width:200px;">
+      <div class="box-title">Holiday Let Website<span class="sup">7</span></div>
+      <div class="box-sub">Served as <strong>static files</strong>.<br>React SPA with Tailwind CSS,<br>Radix UI components, Wouter<br>router. No server-side rendering.</div>
+      <span class="badge" style="background:#f0fcff;border:1px solid #61dafb;color:#0088aa;">React + Vite</span>
+    </div>
+
+    <div style="font-size:20px;color:#ccc;align-self:center;padding:0 4px;">+</div>
+
+    <div class="box box-express" style="min-width:160px;">
+      <div class="box-title">API Server<span class="sup">8</span></div>
+      <div class="box-sub">Express.js (Node).<br>Currently serves only a<br>health-check endpoint.<br>Ready to be extended.</div>
+      <span class="badge" style="background:#f2faf2;border:1px solid #68a063;color:#2a6a2a;">Express · /api/*</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="bridge">HTTPS requests from visitors' browsers</div>
+
+<!-- ══════════════════════════════════════════
+     ZONE 3 — VISITOR EXPERIENCE
+     ══════════════════════════════════════════ -->
+<div class="zone zone-visit">
+  <span class="zone-label">Visitor Experience</span>
+
+  <div class="row" style="margin-top:8px; align-items:flex-start; gap:20px;">
+
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="box box-visitor">
+        <div class="box-title">Website Visitor</div>
+        <div class="box-sub">Browses properties,<br>local guide, contact page<br>via any web browser</div>
+      </div>
+      <div style="font-size:20px;color:#ccc;">→</div>
+    </div>
+
+    <div class="box box-local" style="min-width:200px;">
+      <div class="box-title">Browser localStorage<span class="sup">4</span></div>
+      <div class="box-sub">All site content (properties,<br>things to do, reviews) is seeded<br>from <code>initialData.ts</code> into<br>localStorage on first visit.<br>No database queries at runtime.</div>
+      <span class="badge" style="background:#fff8ed;border:1px solid #e8a020;color:#8a4a00;">Client-side only</span>
+    </div>
+
+    <div style="font-size:20px;color:#ccc;align-self:center;">+</div>
+
+    <div class="box box-formsp" style="min-width:170px;">
+      <div class="box-title">Contact Form<span class="sup">9</span></div>
+      <div class="box-sub">Submissions sent directly<br>from browser to Formspree.<br>Formspree emails Paula.<br>No server involvement.</div>
+      <span class="badge" style="background:#fff0f7;border:1px solid #e84393;color:#aa006e;">formspree.io</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ZONE 4 — EXTERNAL SERVICES
+     ══════════════════════════════════════════ -->
+<div class="zone zone-ext">
+  <span class="zone-label">External Services &amp; Links (opened in new tab by visitors)</span>
+
+  <div class="row" style="margin-top:8px; flex-wrap:wrap; gap:10px;">
+
+    <div class="box box-airbnb">
+      <div class="box-title">Airbnb<span class="sup">10</span></div>
+      <div class="box-sub">Property booking<br>links (2 listings)</div>
+      <span class="badge" style="background:#fff5f5;border:1px solid #ff5a5f;color:#c0000a;">airbnb.co.uk</span>
+    </div>
+
+    <div class="box box-ext">
+      <div class="box-title">English Heritage<span class="sup">11</span></div>
+      <div class="box-sub">Whitby Abbey &amp;<br>Scarborough Castle</div>
+      <span class="badge" style="background:#f8f5ff;border:1px solid #9c8abc;color:#4a3a7a;">english-heritage.org.uk</span>
+    </div>
+
+    <div class="box box-ext">
+      <div class="box-title">TripAdvisor<span class="sup">12</span></div>
+      <div class="box-sub">Restaurant &amp; cafe<br>review pages. Also<br>source of some images.</div>
+      <span class="badge" style="background:#f8f5ff;border:1px solid #9c8abc;color:#4a3a7a;">tripadvisor.co.uk</span>
+    </div>
+
+    <div class="box box-ext">
+      <div class="box-title">Visit North Yorkshire</div>
+      <div class="box-sub">Beach &amp; market<br>information pages</div>
+      <span class="badge" style="background:#f8f5ff;border:1px solid #9c8abc;color:#4a3a7a;">visitnorthyorkshire.com</span>
+    </div>
+
+    <div class="box box-ext">
+      <div class="box-title">Google Maps</div>
+      <div class="box-sub">Beach location links<br>(opens in Maps app)</div>
+      <span class="badge" style="background:#f8f5ff;border:1px solid #9c8abc;color:#4a3a7a;">maps.google.com</span>
+    </div>
+
+    <div class="box box-ext">
+      <div class="box-title">Venue Websites</div>
+      <div class="box-sub">Individual sites:<br>Flamingo Land, SEA LIFE,<br>North York Moors, etc.</div>
+      <span class="badge" style="background:#f8f5ff;border:1px solid #9c8abc;color:#4a3a7a;">Various</span>
+    </div>
+
+    <div class="box box-ext">
+      <div class="box-title">Image CDNs<span class="sup">13</span></div>
+      <div class="box-sub">Unsplash, TripAdvisor,<br>Airbnb, venue sites.<br>Images loaded directly<br>by the browser.</div>
+      <span class="badge" style="background:#f8f5ff;border:1px solid #9c8abc;color:#4a3a7a;">Various CDNs</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     FOOTNOTES
+     ══════════════════════════════════════════ -->
+<div class="footnotes">
+  <h2>Notes</h2>
+  <div class="fn-grid">
+    <div class="fn"><span class="fn-num">1.</span><span>Paula accesses a password-protected <strong>/admin</strong> section of the live website to draft/publish Local Guide entries, manage reviews, and view property settings. The password is hardcoded in the frontend and provides basic access control only.</span></div>
+    <div class="fn"><span class="fn-num">2.</span><span><strong>Replit</strong> (replit.com) is the cloud development environment where the codebase lives and where the AI Agent makes all code changes. It also provides the deployment infrastructure. Two separate services run here: the static website and the API server.</span></div>
+    <div class="fn"><span class="fn-num">3.</span><span><strong>GitHub</strong> (github.com, owned by Microsoft) stores the canonical source code at <em>contactpaulasmith/yorkshirecoasting</em>. Every change the Agent makes is committed and pushed here. This is the permanent backup and version history of the site.</span></div>
+    <div class="fn"><span class="fn-num">4.</span><span>All site content — properties, Local Guide entries, reviews — is seeded from <code>initialData.ts</code> (a file in the codebase) into the visitor's <strong>browser localStorage</strong> on first load. Admin edits persist only in that browser; they are lost if the browser cache is cleared or a different device is used. Permanent changes must go through the Agent updating the source file.</span></div>
+    <div class="fn"><span class="fn-num">5.</span><span><strong>Replit Autoscale</strong> hosting scales the application up and down based on traffic, running only when requests arrive. It handles TLS (HTTPS), health checks, and serves the app at a <em>.replit.app</em> domain. The static site and API server are deployed as separate services within the same Replit project.</span></div>
+    <div class="fn"><span class="fn-num">6.</span><span>At deploy time, <strong>Vite</strong> (a build tool) compiles the React TypeScript source into optimised, minified static HTML/CSS/JavaScript files. These compiled files — not the source code — are what visitors actually receive. The build runs inside the Replit environment using the <em>pnpm</em> package manager.</span></div>
+    <div class="fn"><span class="fn-num">7.</span><span>The website is a <strong>Single-Page Application (SPA)</strong> built with <strong>React</strong>. All page navigation happens client-side in the browser with no round-trips to the server. UI components use Radix UI (accessible primitives) styled with Tailwind CSS. Routing uses the Wouter library.</span></div>
+    <div class="fn"><span class="fn-num">8.</span><span>An <strong>Express.js API server</strong> (Node.js) runs alongside the static site under the <em>/api/*</em> path. Currently it serves only a <code>/api/healthz</code> health-check endpoint used by Replit's infrastructure. It is built and ready to be extended with database-backed endpoints in future.</span></div>
+    <div class="fn"><span class="fn-num">9.</span><span>The Contact page form submits directly from the visitor's browser to <strong>Formspree</strong> (formspree.io) — a third-party form backend service. Formspree receives the submission and forwards it to Paula's email address. No data passes through the Replit servers for form submissions.</span></div>
+    <div class="fn"><span class="fn-num">10.</span><span><strong>Airbnb</strong> is the booking platform for both properties. The website links directly to the existing Airbnb listings (room IDs 1880508 and similar). Bookings, payments, and guest communication are managed entirely within Airbnb — the Yorkshire Coasting site does not handle any booking transactions.</span></div>
+    <div class="fn"><span class="fn-num">11.</span><span><strong>English Heritage</strong> manages Whitby Abbey and Scarborough Castle. The Local Guide links directly to the English Heritage website for visitor information and ticket booking for these attractions.</span></div>
+    <div class="fn"><span class="fn-num">12.</span><span><strong>TripAdvisor</strong> is used in two ways: (a) as the destination for "Visit Website" links on many food &amp; drink entries in the Local Guide, and (b) as an image source — several restaurant photos are loaded directly from TripAdvisor's CDN servers.</span></div>
+    <div class="fn"><span class="fn-num">13.</span><span>Images throughout the site are loaded directly from external CDN servers: <strong>Unsplash</strong> (stock beach/landscape photos), <strong>TripAdvisor CDN</strong> (restaurant photos), <strong>Airbnb CDN</strong> (property photos), and individual venue websites. No images are stored within the Replit project itself, except one local image (<em>/images/secret-realm.jpg</em>).</span></div>
+  </div>
+
+  <!-- colour legend -->
+  <div class="legend" style="margin-top:24px;padding-top:14px;border-top:1px solid #eee;">
+    <strong style="font-size:11px;color:#555;width:100%;margin-bottom:4px;">Company colour key:</strong>
+    <div class="leg-item"><div class="leg-swatch" style="background:#fff4ef;border-color:#f26522;"></div> Replit</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#f6f8fa;border-color:#24292f;"></div> GitHub (Microsoft)</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#eef3fb;border-color:#3b6ea8;"></div> Paula (site owner)</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#f9f5ff;border-color:#a259f7;"></div> Vite (build tool)</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#f0fcff;border-color:#61dafb;"></div> React (Meta)</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#f2faf2;border-color:#68a063;"></div> Express / Node.js</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#fff8ed;border-color:#e8a020;"></div> Browser localStorage</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#fff0f7;border-color:#e84393;"></div> Formspree</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#fff5f5;border-color:#ff5a5f;"></div> Airbnb</div>
+    <div class="leg-item"><div class="leg-swatch" style="background:#f8f5ff;border-color:#9c8abc;"></div> Other external services</div>
+  </div>
+
+  <p style="margin-top:20px;font-size:11px;color:#aaa;">Generated August 2026 · Yorkshire Coasting</p>
+</div>
+
+</body>
+</html>
