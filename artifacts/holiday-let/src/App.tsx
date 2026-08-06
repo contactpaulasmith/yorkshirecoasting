@@ -9,6 +9,7 @@ import Properties from "@/pages/Properties";
 import PropertyDetail from "@/pages/PropertyDetail";
 import Contact from "@/pages/Contact";
 import LocalGuide from "@/pages/LocalGuide";
+import IncludedForStay from "@/pages/IncludedForStay";
 import NotFound from "@/pages/not-found";
 
 // Admin Pages
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/properties" component={Properties} />
       <Route path="/properties/:slug" component={PropertyDetail} />
       <Route path="/local-guide" component={LocalGuide} />
+      <Route path="/included-for-your-stay" component={IncludedForStay} />
       <Route path="/contact" component={Contact} />
       
       <Route path="/admin/login" component={AdminLogin} />

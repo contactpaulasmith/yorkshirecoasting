@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
-import { MapPin, Users, Bed, Bath, Check, Star, ArrowLeft, ExternalLink } from "lucide-react";
+import { MapPin, Users, Bed, Bath, Check, Star, ArrowLeft, ExternalLink, ChevronRight } from "lucide-react";
 
 export default function PropertyDetail() {
   const params = useParams();
@@ -279,14 +279,27 @@ export default function PropertyDetail() {
               <h3 className="text-xl font-serif text-primary mb-4">Need to know</h3>
               <Accordion type="multiple" className="w-full">
                 {property.faqs.map((faq, idx) => (
-                  <AccordionItem key={idx} value={`item-${idx}`} className="border-border/50">
-                    <AccordionTrigger className="text-sm font-medium hover:text-primary hover:no-underline text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
+                  <React.Fragment key={idx}>
+                    <AccordionItem value={`item-${idx}`} className="border-border/50">
+                      <AccordionTrigger className="text-sm font-medium hover:text-primary hover:no-underline text-left">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                    {faq.question === "Wifi" && (
+                      <div className="border-b border-border/50">
+                        <Link
+                          href="/included-for-your-stay"
+                          className="flex items-center justify-between w-full py-4 text-sm font-medium hover:text-primary transition-colors"
+                        >
+                          Included for your stay
+                          <ChevronRight size={16} className="text-muted-foreground" />
+                        </Link>
+                      </div>
+                    )}
+                  </React.Fragment>
                 ))}
               </Accordion>
             </div>
