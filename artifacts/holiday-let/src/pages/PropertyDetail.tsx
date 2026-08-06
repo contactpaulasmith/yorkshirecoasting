@@ -292,7 +292,7 @@ export default function PropertyDetail() {
                       <div className="border-b border-border/50">
                         <Link
                           href="/included-for-your-stay"
-                          className="flex items-center justify-between w-full py-4 text-sm font-medium hover:text-primary transition-colors"
+                          className="flex items-center justify-between w-full py-4 text-sm font-serif font-medium hover:text-primary transition-colors"
                         >
                           Included for your stay
                           <ChevronRight size={16} className="text-muted-foreground" />
