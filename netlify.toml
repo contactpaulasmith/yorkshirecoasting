@@ -1,4 +1,5 @@
 [build]
+  command = "pnpm --filter @workspace/holiday-let run build"
   publish = "artifacts/holiday-let/dist/public"
 
 [[redirects]]
