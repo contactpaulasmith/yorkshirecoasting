@@ -11,10 +11,11 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const configuredPassword = import.meta.env.VITE_ADMIN_PASSWORD;
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "Lulud0g1!") {
+    if (configuredPassword && password === configuredPassword) {
       localStorage.setItem("admin_auth", "true");
       setLocation("/admin");
     } else {
