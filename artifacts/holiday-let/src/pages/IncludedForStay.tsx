@@ -16,6 +16,7 @@ const sections = [
     items: [
       "High Chair (Set up on request)",
       "Travel Cot (Set up on request - please bring your preferred sleeping linen)",
+      "Fold out Bed (Set up on request)",
     ],
   },
   {
