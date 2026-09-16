@@ -11,6 +11,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Properties", path: "/properties" },
+    { name: "For Your Stay", path: "/included-for-your-stay" },
     { name: "Local Guide", path: "/local-guide" },
     { name: "Contact", path: "/contact" },
   ];
