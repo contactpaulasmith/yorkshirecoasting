@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
-import { Check, Coffee, ShowerHead, UtensilsCrossed, WashingMachine, Package, Tv, Car } from "lucide-react";
+import { Check, ShowerHead, UtensilsCrossed, WashingMachine, Package, Tv, Car, Baby } from "lucide-react";
 
 const sections = [
   {
@@ -8,6 +8,14 @@ const sections = [
     title: "Parking",
     items: [
       "Parking Permits / Town Parking Disc (please request additional if multiple cars)",
+    ],
+  },
+  {
+    icon: Baby,
+    title: "Young Children",
+    items: [
+      "High Chair (Set up on request)",
+      "Travel Cot (Set up on request - please bring your preferred sleeping linen)",
     ],
   },
   {
