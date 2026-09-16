@@ -54,6 +54,7 @@ export const initialProperties: Property[] = [
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
+      { question: "Waste", answer: "Please place waste in the bins located in the storage shed at the rear of the property. There is a separate recycling and general waste bin. If your stay overlaps a Wednesday, take the appropriate bin through the rear courtyard gates and to the front street via the walkway between the two properties. You will need the key to the gate at the end of the walkway to access the street. The bin will be collected Thursday morning. The Bin collection calendar is available here: https://www.northyorks.gov.uk/bin-calendar/Scarborough/results/100050491424 or please contact us if you have any questions or need assistance." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
       { question: "Fold-out bed / Cot", answer: "A fold-out bed and Portable Cot is available on request to accommodate an extra guest / child." }
     ],
@@ -88,6 +89,7 @@ export const initialProperties: Property[] = [
     faqs: [
       { question: "Check-in / Check-out", answer: "Self check-in via lockbox — details sent before arrival. Check-in is 3pm and Check-out is 10am unless agreed otherwise." },
       { question: "Parking", answer: "Free on-street parking directly outside the property." },
+      { question: "Waste", answer: "At the Steeple we have a commercial waste service. Please place all waste (recycling and non-recycling) into the yellow bin accessed by the rear kitchen door and side gate of the property. The bin will be taken down Thursday night for Friday collection. You are not required to transport the bin during your stay." },
       { question: "Wifi", answer: "Wifi included — network details provided in the welcome book." },
       { question: "Fold-out bed / Cot", answer: "A fold-out bed and Portable Cot is available on request to accommodate an extra guest / child." }
     ],

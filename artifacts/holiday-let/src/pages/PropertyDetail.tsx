@@ -10,6 +10,24 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { motion } from "framer-motion";
 import { MapPin, Users, Bed, Bath, Check, Star, ArrowLeft, ExternalLink, ChevronRight } from "lucide-react";
 
+function renderFaqAnswer(answer: string) {
+  return answer.split(/(https?:\/\/[^\s]+)/g).map((part, index) =>
+    /^https?:\/\//.test(part) ? (
+      <a
+        key={index}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-2 hover:text-foreground"
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function PropertyDetail() {
   const params = useParams();
   const [, setLocation] = useLocation();
@@ -285,7 +303,7 @@ export default function PropertyDetail() {
                         {faq.question}
                       </AccordionTrigger>
                       <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
-                        {faq.answer}
+                        {renderFaqAnswer(faq.answer)}
                       </AccordionContent>
                     </AccordionItem>
                     {faq.question === "Wifi" && (
