@@ -97,13 +97,13 @@ export default function IncludedForStay() {
           className="bg-primary/5 border border-primary/15 rounded-2xl p-6 mb-12 text-muted-foreground leading-relaxed space-y-3"
         >
           <p>
+            To help you settle in and enjoy your stay, we've provided a range of essentials for your comfort.
+          </p>
+          <p>
             Consumable items such as tea, coffee, washing-up liquid, dishwasher tablets, laundry detergent and toilet paper are supplied as a complimentary starter pack. For longer stays, or if you use more than the initial supply, supermarkets are conveniently located within a couple of minutes' walk should you wish to purchase additional items.
           </p>
           <p>
             If you need anything during your stay, please don't hesitate to get in touch — we're always happy to help.
-          </p>
-          <p>
-            To help you settle in and enjoy your stay, we've provided a range of essentials for your comfort.
           </p>
         </motion.div>
 
