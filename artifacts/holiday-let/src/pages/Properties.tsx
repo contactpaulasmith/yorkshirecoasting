@@ -55,11 +55,11 @@ export default function Properties() {
                 {propertyHighlights[property.slug] && (
                   <aside
                     aria-label={`Property highlight: ${propertyHighlights[property.slug]}`}
-                    className="mb-4 rounded-2xl border border-accent/40 bg-gradient-to-r from-accent/20 via-accent/10 to-primary/10 px-5 py-4 text-center shadow-sm"
+                    className="mb-4 flex h-28 items-center justify-center rounded-2xl border border-accent/40 bg-gradient-to-r from-accent/20 via-accent/10 to-primary/10 px-5 text-center shadow-sm sm:h-24"
                   >
                     <div className="flex items-center justify-center gap-2 text-primary">
                       <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
-                      <p className="text-sm font-semibold tracking-wide">
+                      <p className="text-base font-semibold tracking-wide">
                         {propertyHighlights[property.slug]}
                       </p>
                       <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
