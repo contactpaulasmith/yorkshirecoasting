@@ -47,6 +47,13 @@ export default function Properties() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
+                {property.slug === "the-courtyard" && (
+                  <div className="mb-4 rounded-xl border border-accent/40 bg-accent/10 px-4 py-3 text-center shadow-sm">
+                    <span className="text-sm font-medium text-primary">
+                      Best pic for Scarborough's Open Air Theater
+                    </span>
+                  </div>
+                )}
                 <Card className="overflow-hidden border-border/50 group cursor-pointer h-full flex flex-col hover:shadow-lg transition-all duration-300" onClick={() => setLocation(`/properties/${property.slug}`)}>
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img 
