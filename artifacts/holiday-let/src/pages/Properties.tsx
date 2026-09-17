@@ -73,11 +73,12 @@ export default function Properties() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="min-w-0 md:flex md:flex-col"
               >
                 {propertyHighlights[property.slug] && (
                   <aside
                     aria-label={`Property highlight: ${propertyHighlights[property.slug].map((part) => part.text).join("")}`}
-                    className="mb-4 flex h-28 items-center justify-center rounded-2xl border border-accent/40 bg-gradient-to-r from-accent/20 via-accent/10 to-primary/10 px-5 text-center shadow-sm sm:h-24"
+                    className="mb-4 flex h-28 shrink-0 items-center justify-center rounded-2xl border border-accent/40 bg-gradient-to-r from-accent/20 via-accent/10 to-primary/10 px-5 text-center shadow-sm sm:h-24"
                   >
                     <div className="flex items-center justify-center gap-2 text-primary">
                       <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
@@ -104,7 +105,7 @@ export default function Properties() {
                     </div>
                   </aside>
                 )}
-                <Card className="overflow-hidden border-border/50 group cursor-pointer h-full flex flex-col hover:shadow-lg transition-all duration-300" onClick={() => setLocation(`/properties/${property.slug}`)}>
+                <Card className="overflow-hidden border-border/50 group cursor-pointer flex flex-col hover:shadow-lg transition-all duration-300 md:flex-1" onClick={() => setLocation(`/properties/${property.slug}`)}>
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img 
                       src={property.images[0]} 
