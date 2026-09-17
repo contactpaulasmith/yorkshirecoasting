@@ -14,14 +14,14 @@ type HighlightPart = {
 
 const propertyHighlights: Record<string, HighlightPart[]> = {
   "the-courtyard": [
-    { text: "Best Pick for " },
+    { text: "Best Pick for" },
     {
       text: "Scarborough's Open Air Theatre",
       href: "https://www.scarboroughopenairtheatre.com/",
     },
   ],
   "the-steeple": [
-    { text: "Best Pick for " },
+    { text: "Best Pick for" },
     {
       text: "The Scarborough Spa",
       href: "https://www.scarboroughspa.co.uk/",
@@ -94,7 +94,9 @@ export default function Properties() {
                               {part.text}
                             </a>
                           ) : (
-                            <React.Fragment key={partIndex}>{part.text}</React.Fragment>
+                            <React.Fragment key={partIndex}>
+                              {partIndex === 0 ? <span className="block">{part.text}</span> : part.text}
+                            </React.Fragment>
                           )
                         )}
                       </p>
