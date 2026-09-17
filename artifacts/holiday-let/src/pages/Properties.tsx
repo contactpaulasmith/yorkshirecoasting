@@ -7,9 +7,31 @@ import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
 import { MapPin, Users, Bed, Bath, Star } from "lucide-react";
 
-const propertyHighlights: Record<string, string> = {
-  "the-courtyard": "Best Pick for Scarborough's Open Air Theater",
-  "the-steeple": "Best Pick for The Scarborough Spa & St Joseph's Theatre",
+type HighlightPart = {
+  text: string;
+  href?: string;
+};
+
+const propertyHighlights: Record<string, HighlightPart[]> = {
+  "the-courtyard": [
+    { text: "Best Pick for " },
+    {
+      text: "Scarborough's Open Air Theatre",
+      href: "https://www.scarboroughopenairtheatre.com/",
+    },
+  ],
+  "the-steeple": [
+    { text: "Best Pick for " },
+    {
+      text: "The Scarborough Spa",
+      href: "https://www.scarboroughspa.co.uk/",
+    },
+    { text: " & " },
+    {
+      text: "St Joseph's Theatre",
+      href: "https://sjt.uk.com/",
+    },
+  ],
 };
 
 export default function Properties() {
@@ -54,13 +76,27 @@ export default function Properties() {
               >
                 {propertyHighlights[property.slug] && (
                   <aside
-                    aria-label={`Property highlight: ${propertyHighlights[property.slug]}`}
+                    aria-label={`Property highlight: ${propertyHighlights[property.slug].map((part) => part.text).join("")}`}
                     className="mb-4 flex h-28 items-center justify-center rounded-2xl border border-accent/40 bg-gradient-to-r from-accent/20 via-accent/10 to-primary/10 px-5 text-center shadow-sm sm:h-24"
                   >
                     <div className="flex items-center justify-center gap-2 text-primary">
                       <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
                       <p className="text-base font-semibold tracking-wide">
-                        {propertyHighlights[property.slug]}
+                        {propertyHighlights[property.slug].map((part, partIndex) =>
+                          part.href ? (
+                            <a
+                              key={partIndex}
+                              href={part.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline decoration-accent/70 underline-offset-4 hover:text-primary/80"
+                            >
+                              {part.text}
+                            </a>
+                          ) : (
+                            <React.Fragment key={partIndex}>{part.text}</React.Fragment>
+                          )
+                        )}
                       </p>
                       <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
                     </div>
