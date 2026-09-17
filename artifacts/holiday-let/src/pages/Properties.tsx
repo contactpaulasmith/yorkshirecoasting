@@ -7,6 +7,11 @@ import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
 import { MapPin, Users, Bed, Bath, Star } from "lucide-react";
 
+const propertyHighlights: Record<string, string> = {
+  "the-courtyard": "Best Pick for Scarborough's Open Air Theater",
+  "the-steeple": "Best Pick for The Scarborough Spa & St Joseph's Theatre",
+};
+
 export default function Properties() {
   const { properties } = useAppContext();
   const [, setLocation] = useLocation();
@@ -47,12 +52,19 @@ export default function Properties() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                {property.slug === "the-courtyard" && (
-                  <div className="mb-4 rounded-xl border border-accent/40 bg-accent/10 px-4 py-3 text-center shadow-sm">
-                    <span className="text-sm font-medium text-primary">
-                      Best pic for Scarborough's Open Air Theater
-                    </span>
-                  </div>
+                {propertyHighlights[property.slug] && (
+                  <aside
+                    aria-label={`Property highlight: ${propertyHighlights[property.slug]}`}
+                    className="mb-4 rounded-2xl border border-accent/40 bg-gradient-to-r from-accent/20 via-accent/10 to-primary/10 px-5 py-4 text-center shadow-sm"
+                  >
+                    <div className="flex items-center justify-center gap-2 text-primary">
+                      <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
+                      <p className="text-sm font-semibold tracking-wide">
+                        {propertyHighlights[property.slug]}
+                      </p>
+                      <Star size={15} className="fill-accent text-accent" aria-hidden="true" />
+                    </div>
+                  </aside>
                 )}
                 <Card className="overflow-hidden border-border/50 group cursor-pointer h-full flex flex-col hover:shadow-lg transition-all duration-300" onClick={() => setLocation(`/properties/${property.slug}`)}>
                   <div className="relative aspect-[4/3] overflow-hidden">
